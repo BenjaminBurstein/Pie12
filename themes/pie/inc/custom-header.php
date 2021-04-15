@@ -34,6 +34,12 @@ function pie_custom_header_setup() {
 }
 add_action( 'after_setup_theme', 'pie_custom_header_setup' );
 
+register_nav_menus(
+    array(
+        "main-menu" => "Menu principal du site"
+    )
+);
+
 if ( ! function_exists( 'pie_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
