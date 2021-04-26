@@ -963,9 +963,6 @@ textarea {
 .site-footer #footer-block div .footer-title h2 {
   font-size: var(--font-title);
 }
-.site-footer #footer-block div .footer-title hr {
-  margin-top: -25px;
-}
 .site-footer #footer-block div p {
   font-size: var(--font-text);
 }
@@ -992,6 +989,7 @@ textarea {
   flex-wrap: wrap;
   justify-content: space-between;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  padding-bottom: 10px;
 }
 #site-header a {
   text-decoration: none;
@@ -1009,12 +1007,14 @@ textarea {
   margin: auto;
   display: block;
 }
+#site-header #header-left #header-left-slogan {
+  margin-top: 20px;
+}
 #site-header #header-left #header-left-slogan h1 {
   font-size: var(--font-title);
   font-weight: bold;
 }
 #site-header #header-left #header-left-slogan p {
-  margin-top: -25px;
   font-weight: bold;
 }
 #site-header #header-right {
@@ -1036,16 +1036,6 @@ textarea {
 }
 #site-header #header-right li a:hover {
   color: var(--green);
-}
-
-.img_posts:first-child {
-  width: 300px;
-  height: 300px;
-}
-
-.img_posts {
-  width: 150px;
-  height: 150px;
 }
 
 #profile-top {
@@ -1118,7 +1108,6 @@ textarea {
   text-decoration: underline;
 }
 #profile-content .profile-content-menu > p {
-  margin-top: -15px;
   font-weight: bold;
 }
 #profile-content .profile-content-menu > p span {
@@ -1151,6 +1140,16 @@ textarea {
   position: absolute;
   right: 0;
   bottom: -35px;
+}
+
+.img_posts:first-child {
+  width: 300px;
+  height: 300px;
+}
+
+.img_posts {
+  width: 150px;
+  height: 150px;
 }
 
 /*# sourceMappingURL=style.css.map */

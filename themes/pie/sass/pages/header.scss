@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+  padding-bottom: 10px;
 
   a {
     text-decoration: none;
@@ -29,13 +30,14 @@
 
     #header-left-slogan {
 
+      margin-top: 20px;
+
       h1 {
         font-size: var(--font-title);
         font-weight: bold;
       }
 
       p {
-        margin-top: -25px;
         font-weight: bold;
       }
 
