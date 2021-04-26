@@ -918,6 +918,7 @@ textarea {
   --green: #5FBE58;
   --dark_green: #305F2C;
   --black: #292929;
+  --grey: #515151;
   --font-text: 20px;
   --font-title: 35px;
   --font-link: 26px;
@@ -1045,6 +1046,111 @@ textarea {
 .img_posts {
   width: 150px;
   height: 150px;
+}
+
+#profile-top {
+  width: 90%;
+  background-color: var(--green);
+  color: white;
+  padding: 20px 0 40px 0;
+  margin: 70px auto 250px auto;
+  position: relative;
+}
+#profile-top h2 {
+  text-align: center;
+}
+#profile-top #profile-top-counts {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.05em;
+}
+#profile-top #profile-top-counts .profile-top-count-value {
+  background-color: var(--grey);
+  text-align: center;
+  border-radius: 20px;
+  padding: 6px 2px;
+}
+#profile-top #profile-top-counts .profile-top-count-label {
+  text-align: center;
+  margin-top: -20px;
+}
+#profile-top #profile-top-img {
+  position: absolute;
+  width: 12%;
+  object-fit: contain;
+  border-radius: 50%;
+  left: calc(50% - (12%/2));
+  top: 140px;
+  box-shadow: 0 0 10px var(--grey);
+}
+
+#profile-content {
+  width: 70%;
+  margin: auto;
+}
+#profile-content #profile-content-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#profile-content #profile-content-nav .profile-content-nav-btn {
+  font-size: 1.4em;
+  margin-right: 20px;
+  font-weight: bold;
+}
+#profile-content #profile-content-nav .profile-content-nav-btn.active, #profile-content #profile-content-nav .profile-content-nav-btn:hover {
+  cursor: pointer;
+  color: var(--green);
+}
+#profile-content .profile-content-menu {
+  margin-top: 10px;
+  border: solid var(--grey) 1px;
+  padding: 0 20px 20px 20px;
+  margin-bottom: 80px;
+}
+#profile-content .profile-content-menu > h3 {
+  opacity: 0.4;
+}
+#profile-content .profile-content-menu > h4 {
+  text-decoration: underline;
+}
+#profile-content .profile-content-menu > p {
+  margin-top: -15px;
+  font-weight: bold;
+}
+#profile-content .profile-content-menu > p span {
+  color: var(--green);
+}
+#profile-content .profile-content-menu button:hover {
+  cursor: pointer;
+  background-color: var(--green);
+  color: white;
+}
+#profile-content .profile-content-menu .event-block {
+  width: 90%;
+  margin: 0 auto 40px auto;
+  display: flex;
+  position: relative;
+}
+#profile-content .profile-content-menu .event-block .profile-top-img {
+  width: 12%;
+  object-fit: contain;
+  margin-right: 15px;
+}
+#profile-content .profile-content-menu .event-block .event-infos-title {
+  font-size: 1.2em;
+}
+#profile-content .profile-content-menu .event-block .event-infos-date {
+  margin: -10px 0;
+  opacity: 0.7;
+}
+#profile-content .profile-content-menu .event-block button {
+  position: absolute;
+  right: 0;
+  bottom: -35px;
 }
 
 /*# sourceMappingURL=style.css.map */
