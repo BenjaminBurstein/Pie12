@@ -69,7 +69,14 @@ get_header();
                      <?php   endfor;  ?>
                   </div>
                   
-              <p class="desc"> <?= substr($title[0], 0, 23).'...'; ?></p>
+                  <?php  $length = strlen($title[0]) ;
+                                $max = 23;
+                           if($length> $max){
+                            ?>   <p class="desc"> <?= substr($title[0], 0, $max).'...'; ?></p> <?php 
+                            
+                           }else {
+                            ?>   <p class="desc"> <?= $title[0] ?></p> <?php 
+                           } ?>
               <div class="date_posts">
                         <img  src="<?php echo get_template_directory_uri(); ?>/img/calendar.png" alt="#"/> 
                         <p class="date"> <?= strftime("%d %B %G", strtotime($date[0])); ?> </p>       
@@ -95,7 +102,14 @@ get_header();
                      </div>
                      <?php   endfor;  ?>
                   </div>
-                        <p class="desc"> <?= substr($title[1], 0, 23).'...'; ?></p>
+                  <?php  $length = strlen($title[1]) ;
+                                $max = 23;
+                           if($length> $max){
+                            ?>   <p class="desc"> <?= substr($title[1], 0, $max).'...'; ?></p> <?php 
+                            
+                           }else {
+                            ?>   <p class="desc"> <?= $title[1] ?></p> <?php 
+                           } ?>
                       
                         <div class="date_posts">
                         <img  src="<?php echo get_template_directory_uri(); ?>/img/calendar.png" alt="#"/> 
@@ -119,7 +133,14 @@ get_header();
                      </div>
                      <?php   endfor;  ?>
                   </div>
-                        <p class="desc"> <?= substr($title[2], 0, 23).'...'; ?></p>
+                  <?php  $length = strlen($title[2]) ;
+                                $max = 23;
+                           if($length> $max){
+                            ?>   <p class="desc"> <?= substr($title[2], 0, $max).'...'; ?></p> <?php 
+                            
+                           }else {
+                            ?>   <p class="desc"> <?= $title[2] ?></p> <?php 
+                           } ?>
                         <div class="date_posts">
                         <img  src="<?php echo get_template_directory_uri(); ?>/img/calendar.png" alt="#"/> 
                         <p class="date"> <?= strftime(" %d %B %G", strtotime($date[2])); ?> </p>       
@@ -143,7 +164,14 @@ get_header();
                      </div>
                      <?php   endfor;  ?>
                   </div>
-                        <p class="desc"> <?= substr($title[3], 0, 23).'...'; ?></p>
+                  <?php  $length = strlen($title[3]) ;
+                                $max = 23;
+                           if($length> $max){
+                            ?>   <p class="desc"> <?= substr($title[3], 0, $max).'...'; ?></p> <?php 
+                            
+                           }else {
+                            ?>   <p class="desc"> <?= $title[3] ?></p> <?php 
+                           } ?>
                         <div class="date_posts">
                         <img  src="<?php echo get_template_directory_uri(); ?>/img/calendar.png" alt="#"/> 
                         <p class="date"> <?= strftime(" %d %B %G", strtotime($date[3])); ?> </p>       
@@ -164,7 +192,15 @@ get_header();
                      </div>
                      <?php   endfor;  ?>
                   </div>
-                        <p class="desc"> <?= substr($title[4], 0, 23).'...'; ?></p>
+                        <?php  $length = strlen($title[4]) ;
+                                $max = 23;
+                           if($length> $max){
+                            ?>   <p class="desc"> <?= substr($title[4], 0, $max).'...'; ?></p> <?php 
+                            
+                           }else {
+                            ?>   <p class="desc"> <?= $title[4] ?></p> <?php 
+                           } ?>
+                      
                         <div class="date_posts">
                         <img  src="<?php echo get_template_directory_uri(); ?>/img/calendar.png" alt="#"/> 
                         <p class="date"> <?= strftime(" %d %B %G", strtotime($date[4])); ?> </p>       
@@ -193,48 +229,38 @@ get_header();
 		?>
         <?php  
             setlocale (LC_TIME, 'fr_FR.utf8','fra');
+            ?>  <div id="container_allposts">   <?php 
             foreach(get_posts() as $post) : ?>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <img src="<?= get_field("img") ?>">
+              
+                  <div class="container_post">
+                    <div class="img_post">
+                        <img class="img_listPosts" src="<?= get_field("img")?>" alt="">
                     </div>
-                    <div class="col-lg-8">
-                        <div class="row tag_posts"> <!-- tag-->
-                           
-                                <?php if(get_field("tag_1") != null): ?>
-                                    <div class="tag_posts">
-                                    <p><?= get_field("tag_1") ?></p>
-                                    </div>
-                                <?php endif ?>
-                           
-                         
-                            <?php if(get_field("tag_2") != null): ?>
-                                <div class="tag_posts">
-                                <p class="tagname_posts" ><?= get_field("tag_2") ?></p>
-                                </div>
-                            <?php endif ?>
-                            <?php if(get_field("tag_3") != null): ?>
-                                <div class="tag_posts">
-                                    <p class="tagname_posts"><?= get_field("tag_3") ?></p>
-                                </div>
-                            <?php endif ?>
-                           
+                    <div class="desc_post">
+                        <div>                        
+                    <?php   if(get_field("tag_1") != null) : ?>
+                        <div>
+                        <p><?= get_field("tag_1")?></p>
+                        </div>                 
+                        <?php   endif;?>
+                        <?php   if(get_field("tag_2") != null) : ?>
+                        <div><p><?= get_field("tag_2")?></p></div>                        
+                        <?php   endif;?>
+                        <?php   if(get_field("tag_3") != null) : ?>
+                        <div><p><?= get_field("tag_3")?></p></div>                       
+                        <?php   endif;?>
                         </div>
-                        <div class="row"><!-- titre -->
-                        <p><?= $post->post_title ?></p>
-                        </div>
-                        <div class="row"><!-- date plus description -->
-                                <div class="row">
-                                <img  src="<?php echo get_template_directory_uri(); ?>/img/calendar.png" alt="#"/> 
-                                <p class="date"> <?= strftime(" %d %B %G", strtotime($post->post_date)); ?> </p>      
-                                </div>
-                                <div class="row">
-                                    <p><?= substr($post->post_content, 100).'...' ?></p>
-                                </div>
-                        </div>
-                    </div>
-                </div>
+                            <h2><?= $post->post_title ?></h2>
+                            <div> 
+                            <img  src="<?php echo get_template_directory_uri(); ?>/img/calendar.png" alt="#"/> 
+                            <p>  <?= strftime(" %d %B %G", strtotime($post->post_date)); ?>     </p>
+                            </div>
+                            <p> <?= substr(get_field("desc"), 0, 200).'...'; ?> </p>
+                    </div>  
+                  </div>
+           
            <?php endforeach; ?>
+           </div>
         <?php endwhile;?>
     <?php endif; ?>
 </main><!-- #main -->

@@ -1204,4 +1204,30 @@ textarea {
   margin-right: 10px;
 }
 
+#container_allposts {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container_post {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+}
+
+.img_post {
+  width: 30%;
+}
+
+.desc_post {
+  width: 70%;
+}
+
+.img_listPosts {
+  height: 250px;
+  width: 250px;
+}
+
 /*# sourceMappingURL=style.css.map */
