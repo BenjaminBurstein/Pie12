@@ -13,8 +13,11 @@
  */
 get_header();
 ?>
+
 <main id="primary" class="site-main">
-    <?php if ( have_posts()) : ?>
+    <?php 
+    the_content(); 
+     if ( have_posts()) : ?>
         <?php
 		while ( have_posts() ) :
             the_post()	;  		
@@ -28,7 +31,7 @@ get_header();
            <div class="col-lg-6">
             <?php if(isset($img[0])) :  ?>
               <img src="<?= $img[0] ?>">
-           <?php endif; ?>
+            <?php endif; ?>
            </div>
            <div class="col-lg-6">
            <div class="row">
@@ -48,16 +51,19 @@ get_header();
                         <img src="<?= $img[4] ?>">
                     <?php endif; ?>
                 </div>
+            </div>
            </div>
-           </div>
+          
         </div>
     <?php endwhile; // End of the loop. 
  endif;
+
  ?>
 
 </main><!-- #main -->
 
 <?php
-/* get_sidebar(); */
+// get_sidebar(); 
+
 get_footer();
 ?>
