@@ -45,7 +45,15 @@
             foreach ($items as $menuItem) : ?>
                     <li><a href="<?= $menuItem->url ?>"><?= $menuItem->title ?></a></li>
             <?php endforeach; ?>
-            <li><a id="login-link" href=""><i class="fas fa-user"></i></a></li>
+            <li><a id="login-link" href="
+            <?php
+                if(!is_user_logged_in()) {
+                    echo '/auth';
+                } else {
+                    echo '/profile';
+                }
+            ?>
+            "><i class="fas fa-user"></i></a></li>
         </ul>
     </header>
 

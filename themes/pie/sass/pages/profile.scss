@@ -32,13 +32,13 @@
 
   }
 
-  #profile-top-img {
+  img {
     position: absolute;
-    width: 12%;
+    width: 10%;
     object-fit: contain;
     border-radius: 50%;
-    left: calc(50% - (12%/2));
-    top: 140px;
+    left: calc(50% - (10%/2));
+    top: 150px;
     box-shadow: 0 0 10px var(--grey);
   }
 }
@@ -91,7 +91,19 @@
       }
     }
 
-    button:hover {
+    #logout-btn {
+      color: black;
+      text-decoration: none;
+      border: 1px solid;
+      border-color: #ccc #ccc #bbb;
+      border-radius: 3px;
+      background: #e6e6e6;
+      color: rgba(0, 0, 0, 0.8);
+      line-height: 1;
+      padding: 0.4em 1em 0.31em;
+    }
+
+    button:hover, #logout-btn:hover {
       cursor: pointer;
       background-color: var(--green);
       color: white;
@@ -100,7 +112,7 @@
     // EVENTS
     .event-block {
       width: 90%;
-      margin: 0 auto 40px auto;
+      margin: 40px auto 30px auto;
 
       display: flex;
       position: relative;

@@ -6,7 +6,6 @@ function updateMenus() {
         if(!active) {
             $(this).hide();
         }else {
-            console.log($(this))
             $(this).show();
         }
     })
