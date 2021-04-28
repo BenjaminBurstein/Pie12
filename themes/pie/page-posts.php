@@ -20,8 +20,7 @@ get_header();
 <main id="primary" class="site-main">
 <h1>Les derniers Évènements</h1>
     <?php 
-     if ( have_posts()) : ?>
-        <?php
+     if ( have_posts()) : 
 		while ( have_posts() ) :
             the_post()	;  		
 		?>
@@ -33,7 +32,7 @@ get_header();
         $tag =  [];
         $tempoTag = [];
 
-        foreach(get_posts() as $post) : 
+        foreach(get_posts() as $post) :     
                $img[] = get_field("img");
                $title[] = $post->post_title;
                 $date[] = $post->post_date;
