@@ -1259,10 +1259,53 @@ textarea {
   font-size: 22px;
   opacity: 50%;
   color: black;
+  width: 70%;
 }
 
 .droite {
   margin-right: 180px;
+}
+
+.title_poste {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+  padding-bottom: 30px;
+}
+
+.div_img_poste {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img_poste {
+  width: 80%;
+  height: 300px;
+}
+
+.test {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.div_desc_poste {
+  width: 80%;
+  flex-direction: column;
+}
+
+.description_poste {
+  color: black;
+  font-size: 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  color: grey;
+  width: 500px;
 }
 
 /*# sourceMappingURL=style.css.map */

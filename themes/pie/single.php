@@ -19,23 +19,31 @@ get_header();
 				?>
 					<div>
 						<div>
-							<h2><?= the_title() ?></h2>
-							<img src="<?= get_field("img") ?>" alt="">
-							<p><?= get_field("desc") ?></p>
+							<h2 class="title_poste"><?= the_title() ?></h2>
+							<div class="div_img_poste">
+							<img class="img_poste"  src="<?= get_field("img") ?>" alt="">
+							</div>
+							<div class="test">
+							<div class="div_desc_poste">
+							<p class="description_poste"><?= get_field("desc") ?></p>
+							</div>
+							</div>
+							
+							
 						</div>
 					<div>
 			<?php endwhile; 
 			endif;?>
 				<hr>
-				<h2>Autre article</h2>
+				<h2 class="title_poste">Autre article</h2>
 					<?php  
 					setlocale (LC_TIME, 'fr_FR.utf8','fra');
 					$nbArticle = 0;
 					foreach(get_posts() as $post) : 
 						if($nbArticle < 3) :
 							if($post->post_title != $primaryTitle ) :  
-						?>  
-							<div>
+						?>  d
+							<div class="card">
 								<p style="color: black;" class="date"><?= strftime("%d %B %G", strtotime($post->post_date)); ?></p>
 								<img src="<?= get_field("img") ?>" alt="">
 								<h3><?= the_title() ?></h3>

@@ -20,16 +20,10 @@ get_header();
 <main id="primary" class="site-main">
   
     <?php 
-<<<<<<< HEAD
-     if ( have_posts()) : ?>
-    <?php
-=======
      if ( have_posts()) : 
->>>>>>> 2b4deea7292fa8d86850d4a80ade89214c276838
 		while ( have_posts() ) :
             the_post()	;  		
-		?>
-    <?php  
+	
         $img = []; 
         $title =[];
         setlocale (LC_TIME, 'fr_FR.utf8','fra');
