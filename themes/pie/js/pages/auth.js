@@ -32,3 +32,14 @@ toggle_btn.click(function () {
     toggle_auth = !toggle_auth;
 })
 
+//FORGET PASSWORD
+let forget_btn = $('#forget-pass');
+
+forget_btn.click(function () {
+    let content = document.getElementById("forget-content");
+    if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+    } else {
+       content.style.maxHeight = content.scrollHeight + 1 + "px";
+    }
+})
