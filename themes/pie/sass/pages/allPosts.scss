@@ -61,25 +61,56 @@ display: flex;
 flex-direction: row;
 
 }
+
+.news_separator{
+    border: 2px solid black;
+    width: 80%;
+    padding: 15px 0 15px 15px;
+    margin: 0 0 30px 150px;
+
+}
 #container_allposts{
     width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
 .container_post{
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: row;
-
+    padding-bottom: 45px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 220px;
 }
 .img_post{
-    width: 30%;
+    width: 15%;
 }
 .desc_post{
-    width: 70%;
+    width: 80%;
+    padding-left: 50px;
 }
 .img_listPosts{
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 100%;
+}
+.titre_post{
+    padding: 10px 0 10px 0;
+    font-size: 28px;
+    color: black;
+}
+.date_post{ 
+    font-size: 16px;
+    opacity: 50%;
+    color: black;
+}
+.description_post{
+    font-size: 22px;
+    opacity: 50%;
+    color: black;
+}
+.droite{
+    margin-right: 180px;
 }
