@@ -30,7 +30,7 @@ get_header();
 				<h2>Autre article</h2>
 					<?php  
 					setlocale (LC_TIME, 'fr_FR.utf8','fra');
-					$the_query = new WP_Query( array ( 'orderby' => 'rand', 'posts_per_page' => '3', "post__not_in"=> array(get_the_ID())));
+					$the_query = new WP_Query(array( 'orderby' => 'rand', 'posts_per_page' => '3', "post__not_in"=> array(get_the_ID())));
 					foreach($the_query->get_posts() as $post) : 
 						?>  
 							<div>
