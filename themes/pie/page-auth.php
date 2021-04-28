@@ -15,7 +15,7 @@ if(isset($_POST['login_submit'])) {
     }
 }else if(isset($_POST['register_submit'])) {
     $p = $_POST;
-    if($p['user_pass'] !== $p['user_pass_confirm']) {
+    if($p['user_password'] !== $p['user_password_confirm']) {
         $error = "Les mots de passes ne correspondent pas";
     }else {
         $user = wp_insert_user([
@@ -37,8 +37,8 @@ if(isset($_POST['login_submit'])) {
             $msg = 'Vous êtes maintenant inscrit';
             $headers = 'From : '.get_option('admin_email')."\r\n";
             wp_mail($p['user_email'], 'Inscription réussie', $msg, $headers);
-            $p = [];
             wp_signon($p);
+            $p = [];
             wp_redirect('/profile');
         }
     }
@@ -65,8 +65,8 @@ get_header();
             <form class="auth-block-form" method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
 
                 <div class="auth-block-form-input">
-                    <i class="fas fa-envelope"></i>
-                    <input type="text" name="user_login" placeholder="Email" required>
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="user_login" placeholder="Identifiant" required>
                 </div>
 
                 <div class="auth-block-form-input">
@@ -139,7 +139,7 @@ get_header();
 
                 <div class="auth-block-form-input">
                     <i class="fas fa-city"></i>
-                    <input type="text" name="user_city" placeholder="Pays" value="<?= isset($_POST['user_city']) ? $_POST['user_city'] : '' ?>" required>
+                    <input type="text" name="user_city" placeholder="Ville" value="<?= isset($_POST['user_city']) ? $_POST['user_city'] : '' ?>" required>
                 </div>
 
                 <div class="auth-block-form-input">
