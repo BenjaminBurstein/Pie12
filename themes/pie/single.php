@@ -11,9 +11,9 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-	<?php //$query = new WP_Query( array ( 'orderby' => 'rand', 'posts_per_page' => '1' ) );
+	<?php 
 		if(have_posts() ) :
-			while (/*$the_query->*/have_posts() ) :
+			while (have_posts() ) :
 				the_post();
 				$primaryTitle = get_the_title();
 				?>
@@ -30,10 +30,8 @@ get_header();
 				<h2>Autre article</h2>
 					<?php  
 					setlocale (LC_TIME, 'fr_FR.utf8','fra');
-					$nbArticle = 0;
-					foreach(get_posts() as $post) : 
-						if($nbArticle < 3) :
-							if($post->post_title != $primaryTitle ) :  
+					$the_query = new WP_Query( array ( 'orderby' => 'rand', 'posts_per_page' => '3', "post__not_in"=> array(get_the_ID())));
+					foreach($the_query->get_posts() as $post) : 
 						?>  
 							<div>
 								<p style="color: black;" class="date"><?= strftime("%d %B %G", strtotime($post->post_date)); ?></p>
@@ -43,9 +41,6 @@ get_header();
 								<a href="/<?= $post->post_name?>" ><p>Lire la suite</p></a>
 							</div>	
 						<?php 
-							$nbArticle++;
-							endif;
-						endif; 
 					endforeach;?>	
 				</div>
 			</div>
