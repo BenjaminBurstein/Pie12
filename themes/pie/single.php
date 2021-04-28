@@ -11,51 +11,45 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
-		<?php
-		while ( have_posts() ) :
-			the_post();
-			?>
-				<div>
-					<div>
-						<h2></h2>
-						<img src="" alt="">
-						<p></p>
-					</div>
-
-					<hr>
-					<h2>Autre article</h2>
+	<?php //$query = new WP_Query( array ( 'orderby' => 'rand', 'posts_per_page' => '1' ) );
+		if(have_posts() ) :
+			while (/*$the_query->*/have_posts() ) :
+				the_post();
+				$primaryTitle = get_the_title();
+				?>
 					<div>
 						<div>
-							<p></p>
-							<img src="" alt="">
-							<h3></h3>
-							<p></p>
-							<a href=""><p>Lire la suite</p></a>
+							<h2><?= the_title() ?></h2>
+							<img src="<?= get_field("img") ?>" alt="">
+							<p><?= get_field("desc") ?></p>
 						</div>
-						<div>
-							<p></p>
-							<img src="" alt="">
-							<h3></h3>
-							<p></p>
-							<a href=""><p>Lire la suite</p></a>
-						</div>
-						<div>
-							<p></p>
-							<img src="" alt="">
-							<h3></h3>
-							<p></p>
-							<a href=""><p>Lire la suite</p></a>
-						</div>
-						
-					</div>
+					<div>
+			<?php endwhile; 
+			endif;?>
+				<hr>
+				<h2>Autre article</h2>
+					<?php  
+					setlocale (LC_TIME, 'fr_FR.utf8','fra');
+					$nbArticle = 0;
+					foreach(get_posts() as $post) : 
+						if($nbArticle < 3) :
+							if($post->post_title != $primaryTitle ) :  
+						?>  
+							<div>
+								<p style="color: black;" class="date"><?= strftime("%d %B %G", strtotime($post->post_date)); ?></p>
+								<img src="<?= get_field("img") ?>" alt="">
+								<h3><?= the_title() ?></h3>
+								<p><?= get_field("desc") ?></p>
+								<a href="/<?= $post->post_name?>" ><p>Lire la suite</p></a>
+							</div>	
+						<?php 
+							$nbArticle++;
+							endif;
+						endif; 
+					endforeach;?>	
 				</div>
-				<?php
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
-
+			</div>
+	</main>
 <?php
 
 get_footer();

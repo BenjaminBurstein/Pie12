@@ -20,8 +20,12 @@ get_header();
 <main id="primary" class="site-main">
   
     <?php 
+<<<<<<< HEAD
      if ( have_posts()) : ?>
     <?php
+=======
+     if ( have_posts()) : 
+>>>>>>> 2b4deea7292fa8d86850d4a80ade89214c276838
 		while ( have_posts() ) :
             the_post()	;  		
 		?>
@@ -33,7 +37,7 @@ get_header();
         $tag =  [];
         $tempoTag = [];
 
-        foreach(get_posts() as $post) : 
+        foreach(get_posts() as $post) :     
                $img[] = get_field("img");
                $title[] = $post->post_title;
                 $date[] = $post->post_date;
