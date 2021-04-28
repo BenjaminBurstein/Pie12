@@ -31,3 +31,30 @@ function appearMenu(type) {
     menu[0].dataset.active = 'true';
     updateMenus();
 }
+
+//POPUP
+let overlay = $('#overlay')
+let editor = $('#profile-editor')
+let close_btn = $('#profile-editor-close')
+let open_btn = $('#profile-editor-open')
+
+function togglePopup(value) {
+    if(value) {
+        overlay.show();
+        editor.show();
+    }else {
+        overlay.hide();
+        editor.hide();
+    }
+}
+togglePopup(false);
+
+overlay.click(function () {
+    togglePopup(false);
+})
+close_btn.click(function () {
+    togglePopup(false);
+})
+open_btn.click(function () {
+    togglePopup(true);
+})

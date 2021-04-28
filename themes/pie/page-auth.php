@@ -5,41 +5,69 @@
     wp_redirect('/profile');
 }*/
 
-$error = false;
+$msg = false;
 if(isset($_POST['login_submit'])) {
+    if(isset($_POST['remember'])){
+        setcookie('user_identify', $_POST['user_login'], -1, "/", $_SERVER['SERVER_NAME']);
+    }else {
+        setcookie('user_identify', '', time()-3600, "/", $_SERVER['SERVER_NAME']);
+    }
     $user = wp_signon($_POST);
     if(is_wp_error($user)) {
-        $error = $user->get_error_message();
+        $msg = ['success' => false, 'msg' => $user->get_error_message()];
     }else {
         wp_redirect('/profile');
     }
 }else if(isset($_POST['register_submit'])) {
     $p = $_POST;
-    if($p['user_password'] !== $p['user_password_confirm']) {
-        $error = "Les mots de passes ne correspondent pas";
+    $password = $p['user_password'];
+    if($password !== $p['user_password_confirm']) {
+        $msg = ['success' => false, 'msg' => 'Les mots de passes ne correspondent pas'];
+    }else if(strlen($password) < 5) {
+        $msg = ['success' => false, 'msg' => 'Le mot de passe est trop court (5 caractères minimum)'];
+    }else if(!preg_match("#[A-Z ]#",$password)) {
+        $msg = ['success' => false, 'msg' => 'Le mot de passe doit contenir au moins 1 majuscule'];
+    }else if(!preg_match("#[a-z ]#",$password)) {
+        $msg = ['success' => false, 'msg' => 'Le mot de passe doit contenir au moins 1 minuscule'];
+    }else if(!preg_match("#[0-9 ]#",$password)) {
+        $msg = ['success' => false, 'msg' => 'Le mot de passe doit contenir au moins 1 chiffre'];
     }else {
+
         $user = wp_insert_user([
             'user_login' => $p['user_login'],
-            'user_pass' => $p['user_password'],
+            'user_pass' => $password,
             'user_email' => $p['user_email'],
             'user_registered' => date('Y-m-d H:i:s'),
             'user_url' => $p['user_url']
         ]);
-        if(is_wp_error($user)) {
-            $error = $user->get_error_message();
+        if (is_wp_error($user)) {
+            $msg = ['success' => false, 'msg' => $user->get_error_message()];
         }else {
-            add_user_meta($user, 'name', $p['user_name']);
-            add_user_meta($user, 'company', $p['user_company']);
-            add_user_meta($user, 'country', $p['user_country']);
-            add_user_meta($user, 'city', $p['user_city']);
-            add_user_meta($user, 'products', $p['user_products']);
-            add_user_meta($user, 'motivation', $p['user_motivation']);
+            $register_fields = ['login', 'email', 'password', 'password_confirm', 'register_submit'];
+            foreach ($p as $key => $value) {
+                $key = str_replace('user_', '', $key);
+                if (in_array($key, $register_fields, true)) {
+                    continue;
+                }
+                add_user_meta($user, $key, $value);
+            }
             $msg = 'Vous êtes maintenant inscrit';
-            $headers = 'From : '.get_option('admin_email')."\r\n";
+            $headers = 'From : ' . get_option('admin_email') . "\r\n";
             wp_mail($p['user_email'], 'Inscription réussie', $msg, $headers);
             wp_signon($p);
             $p = [];
             wp_redirect('/profile');
+        }
+    }
+
+}else if(isset($_POST['forget_submit'])) {
+    $email = $_POST['forget_email'];
+    if(!empty($email) && isset($email)) {
+        $mail = retrieve_password($email);
+        if(is_wp_error($mail)) {
+            $msg = ['success' => false, 'msg' => $mail->get_error_message()];
+        }else {
+            $msg = ['success' => true, 'msg' => 'Un mail a été envoyé à l\'adresse: .$email'];
         }
     }
 }
@@ -56,9 +84,9 @@ get_header();
             <?php the_custom_logo(); ?>
             <h2 id="auth-block-title"><?php bloginfo( 'name' ); ?></h2>
 
-            <?php if($error): ?>
-                <div id="error-block">
-                    <i class="fas fa-exclamation-triangle"></i> <?= $error ?>
+            <?php if($msg): ?>
+                <div id="<?= $msg['success'] === true ? 'success' : 'error' ?>-block" class="msg-block">
+                    <i class="fas fa-<?= $msg['success'] === true ? 'check-circle' : 'exclamation-triangle' ?>"></i> <?= $msg['msg'] ?>
                 </div>
             <?php endif ?>
 
@@ -66,20 +94,35 @@ get_header();
 
                 <div class="auth-block-form-input">
                     <i class="fas fa-user"></i>
-                    <input type="text" name="user_login" placeholder="Identifiant" required>
+                    <input type="text" name="user_login" placeholder="Identifiant ou Email" value="<?= isset($_COOKIE['user_identify']) ? $_COOKIE['user_identify'] : '' ?>">
                 </div>
 
                 <div class="auth-block-form-input">
                     <i class="fas fa-lock"></i>
-                    <input type="password" name="user_password" placeholder="Mot de passe" required>
+                    <input type="password" name="user_password" placeholder="Mot de passe">
                 </div>
 
                 <div class="auth-block-form-remember">
-                    <input type="checkbox" name="remember" id="remember" value="1">
+                    <input type="checkbox" name="remember" id="remember" value="1" <?= isset($_COOKIE['user_identify']) ? 'checked' : '' ?>>
                     Se souvenir de moi
                 </div>
 
-                <p id="auth-block-forget">mot de passe oublié ? <a href="<?= wp_lostpassword_url() ?>">Cliquez-ici</a></p>
+                <!--FORGET PASSWORD-->
+                <p id="auth-block-forget">mot de passe oublié ? <span id="forget-pass">Cliquez-ici</span></p>
+                <div id="forget-content">
+
+                    <div id="forget-content-msg">
+                        <i class="fas fa-info"></i> Merci de saisir votre email afin de vous envoyer un mail pour modifier votre mot de passe.
+                    </div>
+
+                    <div class="auth-block-form-input">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" name="forget_email" placeholder="Email">
+                    </div>
+
+                    <button type="submit" name="forget_submit">Envoyer</button>
+
+                </div>
 
                 <button type="submit" name="login_submit">Connexion</button>
 
@@ -94,9 +137,9 @@ get_header();
             <?php the_custom_logo(); ?>
             <h2 id="auth-block-title"><?php bloginfo( 'name' ); ?></h2>
 
-            <?php if($error): ?>
-                <div id="error-block">
-                    <i class="fas fa-exclamation-triangle"></i> <?= $error ?>
+            <?php if($msg): ?>
+                <div id="<?= $msg['success'] === true ? 'success' : 'error' ?>-block" class="msg-block">
+                    <i class="fas fa-<?= $msg['success'] === true ? 'check-circle' : 'exclamation-triangle' ?>"></i> <?= $msg['msg'] ?>
                 </div>
             <?php endif ?>
 
@@ -144,7 +187,7 @@ get_header();
 
                 <div class="auth-block-form-input">
                     <i class="fab fa-chrome"></i>
-                    <input type="text" name="user_url" placeholder="Lien du site" value="<?= isset($_POST['user_url']) ? $_POST['user_url'] : '' ?>" required>
+                    <input type="text" name="user_url" placeholder="Lien du site" value="<?= isset($_POST['user_url']) ? $_POST['user_url'] : '' ?>">
                 </div>
 
                 <div class="auth-block-form-input">
