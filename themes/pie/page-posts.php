@@ -24,6 +24,7 @@ get_header();
 		while ( have_posts() ) :
             the_post()	;  		
 	
+    
         $img = []; 
         $title =[];
         setlocale (LC_TIME, 'fr_FR.utf8','fra');

@@ -11,9 +11,9 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-	<?php //$query = new WP_Query( array ( 'orderby' => 'rand', 'posts_per_page' => '1' ) );
+	<?php 
 		if(have_posts() ) :
-			while (/*$the_query->*/have_posts() ) :
+			while (have_posts() ) :
 				the_post();
 				$primaryTitle = get_the_title();
 				?>
@@ -38,23 +38,26 @@ get_header();
 				<h2 class="title_poste">Autre article</h2>
 					<?php  
 					setlocale (LC_TIME, 'fr_FR.utf8','fra');
-					$nbArticle = 0;
-					foreach(get_posts() as $post) : 
-						if($nbArticle < 3) :
-							if($post->post_title != $primaryTitle ) :  
-						?>  d
-							<div class="card">
-								<p style="color: black;" class="date"><?= strftime("%d %B %G", strtotime($post->post_date)); ?></p>
-								<img src="<?= get_field("img") ?>" alt="">
-								<h3><?= the_title() ?></h3>
-								<p><?= get_field("desc") ?></p>
-								<a href="/<?= $post->post_name?>" ><p>Lire la suite</p></a>
+					$the_query = new WP_Query(array( 'orderby' => 'rand', 'posts_per_page' => '3', "post__not_in"=> array(get_the_ID())));
+					?>  	<div class="containerposte"><?php  
+					foreach($the_query->get_posts() as $post) : 
+						?>  
+					
+						<div class="cardposte">
+								<p  class="date_poste"><?= strftime("%d %B %G", strtotime($post->post_date)); ?></p>
+								<img class="photo_poste" src="<?= get_field("img") ?>" alt="">
+								<h3 class="titre_poste"><?= the_title() ?></h3>
+								<div class="poste_desc">
+								<p class="desc_poste"><?= substr(get_field("desc"), 0, 300).'...'; ?></p>
+								</div>
+								
+								<a class="Lire" href="/<?= $post->post_name?>" ><p>Lire la suite</p></a>
 							</div>	
+					
+							
 						<?php 
-							$nbArticle++;
-							endif;
-						endif; 
-					endforeach;?>	
+					endforeach;?>
+						</div>	
 				</div>
 			</div>
 	</main>
