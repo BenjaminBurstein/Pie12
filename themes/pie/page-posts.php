@@ -31,12 +31,13 @@ get_header();
         $date = [];
         $tag =  [];
         $tempoTag = [];
+        $src = [];
 
         foreach(get_posts() as $post) :     
                $img[] = get_field("img");
                $title[] = $post->post_title;
                 $date[] = $post->post_date;
-                
+                $src[] = $post->post_name;
             if(get_field("tag_1") != null){
                 $tempoTag[] = get_field("tag_1");
             }
@@ -53,7 +54,8 @@ get_header();
       
         <div class="bloc_gauche containere">
             <?php if(isset($img[0])) :  ?>
-            <img id="img_firstposts" class="img_posts " src="<?= $img[0] ?>">
+                <a href="/<?= $src[0]?>">
+            <img id="img_firstposts" class="img_posts " src="<?= $img[0] ?>"></a>
             <div class="desc_posts">
                 <div class="tag_posts">
                     <?php for( $i=0; $i<sizeof($tag[0]); $i++) : ?>
@@ -85,6 +87,7 @@ get_header();
         <div class="col-lg-5 droite">
             <div class="row">
                 <div class="col-lg-6 ">
+                <a href="/<?=  $src[1]?>">
                     <div class="containere">
                         <?php if(isset($img[1])) :  ?>
                         <img class="img_posts" src="<?= $img[1] ?>">
@@ -116,6 +119,8 @@ get_header();
 
                         <?php endif; ?>
                     </div>
+                    </a>
+                    <a href="/<?=  $src[2]?>">
                     <div class="containere">
                         <?php if(isset($img[2])) :  ?>
                         <img class="img_posts mt-3" src="<?= $img[2] ?>">
@@ -144,9 +149,10 @@ get_header();
                         </div>
                         <?php endif; ?>
                     </div>
-
+                           </a>
                 </div>
                 <div class="col-lg-6">
+                <a href="/<?=  $src[3]?>">
                     <div class="containere">
                         <?php if(isset($img[3])) :  ?>
                         <img class="img_posts mr-4" src="<?= $img[3] ?>">
@@ -175,6 +181,8 @@ get_header();
                         </div>
                         <?php endif; ?>
                     </div>
+                   </a>
+                    <a href="/<?=  $src[4]?>">
                     <div class="containere">
                         <?php if(isset($img[4])) :  ?>
                         <img class="img_posts mt-3 mr-4" src="<?= $img[4] ?>">
@@ -205,7 +213,7 @@ get_header();
                         </div>
                         <?php endif; ?>
                     </div>
-
+                    </a>
                 </div>
             </div>
         </div>
@@ -228,7 +236,7 @@ get_header();
             ?> <div id="container_allposts"> <?php 
             foreach(get_posts() as $post) : ?>
 
-        <div class="container_post">
+       <a href="/<?= $post->post_name?>"> <div class="container_post">
             <div class="img_post">
                 <img class="img_listPosts" src="<?= get_field("img")?>" alt="">
 
@@ -255,7 +263,7 @@ get_header();
                 <p class="description_post"> <?= substr(get_field("desc"), 0, 200).'...'; ?> </p>
             </div>
         </div>
-
+        </a>
         <?php endforeach; ?>
     </div>
     <?php endwhile;?>
