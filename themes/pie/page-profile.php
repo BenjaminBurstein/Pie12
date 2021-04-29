@@ -178,6 +178,7 @@ get_header();
 
                     $banner = get_post_meta($event->ID, '_event_banner', true);
                     $start_date = getTransformedDate(get_post_meta($event->ID, '_event_start_date', true));
+                    $description = get_post_meta($event->ID, '_event_description', true);
 
                     if(empty($banner)) {
                         continue;
@@ -194,7 +195,7 @@ get_header();
                             <?= $start_date ?>
                         </p>
                         <p class="event-infos-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium architecto, asperiores assumenda ex exercitationem ipsa ipsam quisquam. Alias aspernatur atque, aut itaque iusto nihil praesentium quia quibusdam. Enim, odio.
+                            <?= $description ?>
                         </p>
                     </div>
 
