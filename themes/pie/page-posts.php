@@ -47,7 +47,6 @@ get_header();
             $tag[] = $tempoTag;
             $tempoTag = [];
             
-<<<<<<< HEAD
               
         endforeach; ?>
 
@@ -64,33 +63,6 @@ get_header();
                         <p class="tagname_posts">
                             <?= $tag[0][$i]; ?>
                         </p>
-=======
-        <div class="row">
-        <?php   if($i<5) :	?>
-            <?php if($i==0): ?>
-            <div class="col-lg-6">
-                <img class="img_posts" src="<?=  get_field('photo')?>"></img> 
-            </div>
-            <?php endif ?>
-            <div class="col-lg-6">
-                <div class="row">
-                 <?php if($i==1): ?>
-                    <div class="col-lg-6">
-                        <div class="row">
-                        <img class="img_posts" src="<?=  get_field('photo')?>"></img> <?php endif ?>
-                        </div>
-                        <?php if($i==2): ?>
-                            <div class="row">
-                            <img class="img_posts" src="<?=  get_field('photo')?>"></img> <?php endif ?>
-                    </div>
-                            </div>
-                        
-                    <div class="col-lg-6">
-                        <?php if($i==3): ?>
-                        <img class="img_posts" src="<?=  get_field('photo')?>"></img> <?php endif ?>
-                        <?php if($i==4): ?>
-                        <img class="img_posts" src="<?=  get_field('photo')?>"></img> <?php endif ?>
->>>>>>> main
                     </div>
                     <?php   endfor;  ?>
                 </div>
@@ -267,7 +239,6 @@ get_header();
        <a href="/<?= $post->post_name?>"> <div class="container_post">
             <div class="img_post">
                 <img class="img_listPosts" src="<?= get_field("img")?>" alt="">
-
             </div>
             <div class="desc_post">
                 <div class="tag_posts">
