@@ -1142,6 +1142,18 @@ textarea {
   bottom: -35px;
 }
 
+#bloc {
+  width: 80%;
+  margin: 3rem 0 3rem 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.bloc_gauche {
+  width: 50%;
+  margin-left: 100px;
+}
+
 #img_firstposts {
   width: 100%;
   height: 100%;
@@ -1154,7 +1166,7 @@ textarea {
   opacity: 90%;
 }
 
-.container {
+.containere {
   position: relative;
 }
 
@@ -1182,10 +1194,10 @@ textarea {
 
 .tagcont_posts {
   display: flex;
-  padding: 5px 10px 5px 10px;
+  padding: 2px 5px 2px 5px;
   background-color: white;
   border: 2px solid grey;
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 .tag_posts {
@@ -1208,7 +1220,7 @@ textarea {
   border: 2px solid black;
   width: 80%;
   padding: 15px 0 15px 15px;
-  margin: 0 0 30px 150px;
+  margin: 0 0 30px 100px;
 }
 
 #container_allposts {
@@ -1226,7 +1238,7 @@ textarea {
   padding-bottom: 45px;
   justify-content: center;
   align-items: center;
-  margin-left: 220px;
+  padding-left: 100px;
 }
 
 .img_post {
@@ -1256,6 +1268,10 @@ textarea {
 }
 
 .description_post {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
   font-size: 22px;
   opacity: 50%;
   color: black;
@@ -1263,9 +1279,95 @@ textarea {
 }
 
 .droite {
-  margin-right: 180px;
+  margin-left: 100px;
 }
 
+@media screen and (max-width: 1316px) {
+  #bloc {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 1220px) {
+  .tagcont_posts:nth-child(2) {
+    display: none;
+  }
+}
+@media screen and (max-width: 1060px) {
+  .news_separator {
+    border: none;
+    padding: 0;
+    margin: 30px 0 30px 50px;
+    color: green;
+    width: auto;
+  }
+
+  .tout {
+    display: none !important;
+  }
+
+  .tagcont_posts:nth-child(2) {
+    display: block;
+  }
+
+  .container_post {
+    padding-left: 0;
+  }
+
+  .img_post {
+    width: 30%;
+  }
+
+  .description_post {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 769px) {
+  .desc_post {
+    width: 90%;
+    padding-left: 30px;
+  }
+
+  .titre_post {
+    font-size: 22px;
+  }
+
+  .description_post {
+    font-size: 16px;
+    width: 95%;
+  }
+
+  .tagname_posts {
+    font-size: 16px;
+    color: black;
+    margin: 0;
+  }
+
+  .tagcont_posts {
+    display: flex;
+    padding: 2px 5px 2px 5px;
+    border: 1px solid grey;
+    margin-right: 15px;
+  }
+
+  .img_post {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 648px) {
+  .img_listPosts {
+    width: 80%;
+    height: 150px;
+  }
+
+  .desc_post {
+    padding-left: 10px;
+  }
+}
+@media screen and (max-width: 424px) {
+  .img_post {
+    display: none;
+  }
+}
 .title_poste {
   display: flex;
   align-items: center;
