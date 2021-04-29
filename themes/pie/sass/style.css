@@ -1132,7 +1132,7 @@ textarea {
 #profile-content .profile-content-menu > p span {
   color: var(--green);
 }
-#profile-content .profile-content-menu #logout-btn {
+#profile-content .profile-content-menu #logout-btn, #profile-content .profile-content-menu #admin-btn {
   color: black;
   text-decoration: none;
   border: 1px solid;
@@ -1143,7 +1143,7 @@ textarea {
   line-height: 1;
   padding: 0.4em 1em 0.31em;
 }
-#profile-content .profile-content-menu button:hover, #profile-content .profile-content-menu #logout-btn:hover {
+#profile-content .profile-content-menu button:hover, #profile-content .profile-content-menu #logout-btn:hover, #profile-content .profile-content-menu #admin-btn:hover {
   cursor: pointer;
   background-color: var(--green);
   color: white;
@@ -1183,7 +1183,7 @@ textarea {
 }
 
 #profile-editor {
-  position: fixed;
+  position: absolute;
   border: solid var(--grey) 1px;
   padding: 0 20px 20px 20px;
   background-color: white;

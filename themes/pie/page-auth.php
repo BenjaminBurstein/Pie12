@@ -51,9 +51,17 @@ if(isset($_POST['login_submit'])) {
                 }
                 add_user_meta($user, $key, $value);
             }
+
+            //MAIL TO USER
             $msg = 'Vous êtes maintenant inscrit';
             $headers = 'From : ' . get_option('admin_email') . "\r\n";
             wp_mail($p['user_email'], 'Inscription réussie', $msg, $headers);
+
+            //MAIL TO ADMIN
+            $msg = 'L\'utilisateur '.$p['user_login'].' est en attente d\'inscription sur votre panel admin.';
+            $headers = 'From : ' . get_option('admin_email') . "\r\n";
+            wp_mail(get_option('admin_email'), 'Inscription d\'utilisateur', $msg, $headers);
+
             wp_signon($p);
             $p = [];
             wp_redirect('/profile');
