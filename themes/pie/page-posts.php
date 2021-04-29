@@ -35,7 +35,6 @@ get_header();
         <?php   if($i<5) :	?>
             <?php if($i==0): ?>
             <div class="col-lg-6">
-               
                 <img class="img_posts" src="<?=  get_field('photo')?>"></img> 
             </div>
             <?php endif ?>
