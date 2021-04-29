@@ -1212,7 +1212,6 @@ textarea {
   text-decoration: underline;
 }
 #profile-editor p {
-  margin-top: -15px;
   font-weight: bold;
 }
 #profile-editor p input {
@@ -1439,7 +1438,6 @@ textarea {
     margin: auto;
   }
 }
-
 .img_posts:first-child {
   width: 300px;
   height: 300px;

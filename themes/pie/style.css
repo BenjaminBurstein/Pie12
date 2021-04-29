@@ -992,7 +992,8 @@ textarea {
   justify-content: space-between;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   background-color: white;
-  padding-bottom: 10px;
+  position: relative;
+  z-index: 999;
 }
 #site-header a {
   text-decoration: none;
@@ -1083,6 +1084,19 @@ textarea {
   width: 70%;
   margin: auto;
 }
+#profile-content .msg-block {
+  width: 100%;
+  margin: 0 auto 50px auto;
+  background-color: var(--red);
+  padding: 15px;
+  color: white;
+}
+#profile-content #error-block {
+  background-color: var(--red);
+}
+#profile-content #success-block {
+  background-color: var(--green);
+}
 #profile-content #profile-content-nav {
   display: flex;
   list-style: none;
@@ -1162,22 +1176,137 @@ textarea {
   bottom: -35px;
 }
 
-.auth-main {
-  display: flex;
-  justify-content: space-between;
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
-.auth-main #auth-img, .auth-main #auth-block {
+
+#profile-editor {
+  position: fixed;
+  border: solid var(--grey) 1px;
+  padding: 0 20px 20px 20px;
+  background-color: white;
+  z-index: 2;
+  width: 60%;
+  left: calc((100% - 60%) / 2);
+}
+#profile-editor #profile-editor-close {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  color: var(--green);
+  font-size: 2.8em;
+}
+#profile-editor #profile-editor-close:hover {
+  cursor: pointer;
+}
+#profile-editor h3 {
+  opacity: 0.4;
+}
+#profile-editor h4 {
+  text-decoration: underline;
+}
+#profile-editor p {
+  font-weight: bold;
+}
+#profile-editor p input {
+  color: var(--green);
+  outline: none;
+}
+#profile-editor p input::placeholder {
+  color: var(--grey);
+  opacity: 0.4;
+}
+#profile-editor button:hover {
+  cursor: pointer;
+  background-color: var(--green);
+  color: white;
+}
+
+/* RESPONSIVE */
+/* IPAD ROTATE */
+@media screen and (max-width: 1024px) {
+  #profile-top {
+    padding-bottom: 10px;
+  }
+  #profile-top img {
+    width: 15%;
+    left: calc(50% - (15%/2));
+  }
+
+  #profile-editor {
+    width: 80%;
+    left: calc((100% - 80%) / 2);
+  }
+}
+/* MOBILE */
+@media screen and (max-width: 414px) {
+  #profile-top {
+    width: 100%;
+    margin-bottom: 120px;
+    padding-bottom: 80px;
+  }
+  #profile-top #profile-top-counts {
+    width: 50%;
+    display: block;
+    justify-content: space-between;
+    font-size: 1.05em;
+  }
+  #profile-top #profile-top-counts .profile-top-count-value .profile-top-count-value {
+    width: 70%;
+    text-align: center;
+  }
+  #profile-top img {
+    width: 40%;
+    left: calc(50% - (40%/2));
+    top: 75%;
+  }
+
+  #profile-content {
+    width: 95%;
+  }
+  #profile-content .profile-content-menu .event-block {
+    width: 95%;
+    display: block;
+  }
+  #profile-content .profile-content-menu .event-block .profile-top-img {
+    width: 50%;
+    display: block;
+    margin: auto;
+  }
+
+  #profile-editor {
+    width: 95%;
+    left: calc((100% - 95%) / 2);
+  }
+}
+.auth-main #auth-img {
+  position: fixed;
+  height: 100%;
   width: 50%;
+  top: 0;
 }
 .auth-main .auth-block {
-  padding-bottom: 120px;
+  width: 50%;
+  float: right;
 }
-.auth-main .auth-block #error-block {
-  width: 90%;
-  margin: auto;
+.auth-main .auth-block .msg-block {
+  width: 80%;
+  margin: 0 auto 50px auto;
   background-color: var(--red);
   padding: 15px;
   color: white;
+}
+.auth-main .auth-block #error-block {
+  background-color: var(--red);
+}
+.auth-main .auth-block #success-block {
+  background-color: var(--green);
 }
 .auth-main .auth-block .custom-logo-link {
   width: 15%;
@@ -1231,7 +1360,38 @@ textarea {
 .auth-main .auth-block .auth-block-form #auth-block-forget a {
   color: var(--green);
 }
-.auth-main .auth-block .auth-block-form button {
+.auth-main .auth-block .auth-block-form #forget-pass {
+  color: var(--green);
+  text-decoration: underline;
+}
+.auth-main .auth-block .auth-block-form #forget-pass:hover {
+  cursor: pointer;
+}
+.auth-main .auth-block .auth-block-form #forget-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  width: 80%;
+  margin: auto;
+}
+.auth-main .auth-block .auth-block-form #forget-content #forget-content-msg {
+  width: 100%;
+  background-color: #d6d6d6;
+  color: #666666;
+  padding: 10px;
+  margin: 20px 0 -30px 0;
+}
+.auth-main .auth-block .auth-block-form #forget-content button {
+  width: 60%;
+  display: block;
+  margin: 20px auto;
+}
+.auth-main .auth-block .auth-block-form #forget-content button:hover {
+  cursor: pointer;
+  background-color: var(--green);
+  color: white;
+}
+.auth-main .auth-block .auth-block-form > button {
   width: 100%;
   padding: 30px 0;
   background-color: var(--light-grey);
@@ -1240,7 +1400,7 @@ textarea {
   font-size: 1.8em;
   margin: 30px 0;
 }
-.auth-main .auth-block .auth-block-form button:hover {
+.auth-main .auth-block .auth-block-form > button:hover {
   cursor: pointer;
   background-color: var(--grey);
 }
@@ -1254,6 +1414,30 @@ textarea {
   cursor: pointer;
 }
 
+/* RESPONSIVE */
+/* IPAD */
+@media screen and (max-width: 768px) {
+  .auth-main #auth-img {
+    width: 20%;
+  }
+  .auth-main .auth-block {
+    width: 80%;
+  }
+}
+/* MOBILE */
+@media screen and (max-width: 414px) {
+  .auth-main {
+    display: block;
+  }
+  .auth-main #auth-img {
+    display: none;
+  }
+  .auth-main .auth-block {
+    width: 100%;
+    float: unset;
+    margin: auto;
+  }
+}
 .img_posts:first-child {
   width: 300px;
   height: 300px;
