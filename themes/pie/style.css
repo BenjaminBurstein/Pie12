@@ -1441,11 +1441,29 @@ textarea {
 .img_posts:first-child {
   width: 300px;
   height: 300px;
+/* RESPONSIVE */
+/* IPAD */
+@media screen and (max-width: 768px) {
+  .auth-main #auth-img {
+    width: 20%;
+  }
+  .auth-main .auth-block {
+    width: 80%;
+  }
 }
-
-.img_posts {
-  width: 150px;
-  height: 150px;
+/* MOBILE */
+@media screen and (max-width: 414px) {
+  .auth-main {
+    display: block;
+  }
+  .auth-main #auth-img {
+    display: none;
+  }
+  .auth-main .auth-block {
+    width: 100%;
+    float: unset;
+    margin: auto;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
