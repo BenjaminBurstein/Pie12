@@ -3,11 +3,7 @@
   width: 90%;
   background-color: var(--green);
   color: white;
-<<<<<<< HEAD
-  padding: 20px 0 70px 0;
-=======
   padding: 20px 0 90px 0;
->>>>>>> main
   margin: 70px auto 250px auto;
   position: relative;
 
@@ -168,10 +164,7 @@
       }
 
       .event-infos-date {
-<<<<<<< HEAD
-=======
         margin-bottom: 0;
->>>>>>> main
         opacity: 0.7;
       }
 
@@ -197,26 +190,13 @@
 }
 
 #profile-editor {
-<<<<<<< HEAD
-  position: fixed;
-=======
   position: absolute;
->>>>>>> main
   border: solid var(--grey) 1px;
   padding: 0 20px 20px 20px;
   background-color: white;
   z-index: 2;
   width: 60%;
   left: calc((100% - 60%) / 2);
-<<<<<<< HEAD
-
-  #profile-editor-close {
-    position: absolute;
-    right: 10px;
-    top: 8px;
-    color: var(--green);
-    font-size: 2.8em;
-=======
   top: 20%;
 
   #profile-editor-close {
@@ -225,7 +205,6 @@
     top: 8px;
     color: var(--green);
     font-size: 2.5em;
->>>>>>> main
   }
 
   #profile-editor-close:hover {
@@ -245,10 +224,7 @@
     font-weight: bold;
 
     input {
-<<<<<<< HEAD
-=======
       margin-left: 5px;
->>>>>>> main
       color: var(--green);
       outline: none;
     }
