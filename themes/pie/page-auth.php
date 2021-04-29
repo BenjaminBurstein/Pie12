@@ -12,7 +12,11 @@ if(isset($_POST['login_submit'])) {
     }else {
         setcookie('user_identify', '', time()-3600, "/", $_SERVER['SERVER_NAME']);
     }
-    $user = wp_signon($_POST);
+    $msg = ['success' => false, 'msg' => 'yes'];
+    $user = wp_signon([
+        'user_login' => $_POST['user_login'],
+        'user_password' => $_POST['user_password']
+    ]);
     if(is_wp_error($user)) {
         $msg = ['success' => false, 'msg' => $user->get_error_message()];
     }else {
