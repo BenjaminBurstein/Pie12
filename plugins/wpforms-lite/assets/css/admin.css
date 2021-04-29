@@ -805,7 +805,15 @@ body div.jconfirm div.jconfirm-box button.btn-normal-case {
 
 body div.jconfirm div.jconfirm-box .error {
   display: none;
+<<<<<<< HEAD
+<<<<<<< HEAD
+  color: red;
+=======
   color: #ccc;
+>>>>>>> main
+=======
+  color: #ccc;
+>>>>>>> main
 }
 
 body div.jconfirm div.jconfirm-box .wpforms-error {
@@ -2659,7 +2667,15 @@ body .choices input[type=text].choices__input:not(.wpforms-hidden) {
 }
 
 #wpforms-entries-single #wpforms-entry-notes .wpforms-entry-notes-byline .note-delete:hover {
+<<<<<<< HEAD
+<<<<<<< HEAD
+  color: red;
+=======
   color: #ccc;
+>>>>>>> main
+=======
+  color: #ccc;
+>>>>>>> main
   text-decoration: none;
 }
 
@@ -2774,7 +2790,15 @@ body .choices input[type=text].choices__input:not(.wpforms-hidden) {
 }
 
 #wpforms-entries-single #wpforms-entry-details .submitdelete:hover {
+<<<<<<< HEAD
+<<<<<<< HEAD
+  color: red;
+=======
   color: #ccc;
+>>>>>>> main
+=======
+  color: #ccc;
+>>>>>>> main
 }
 
 #wpforms-entries-single .wpforms-entry-actions-meta a {
@@ -3131,7 +3155,15 @@ body .choices input[type=text].choices__input:not(.wpforms-hidden) {
 }
 
 #wpforms-entries-list .wp-list-table .delete:hover {
+<<<<<<< HEAD
+<<<<<<< HEAD
+  color: red;
+=======
   color: #ccc;
+>>>>>>> main
+=======
+  color: #ccc;
+>>>>>>> main
 }
 
 #wpforms-entries-list #wpforms-entries-table-edit-columns {
@@ -3949,7 +3981,15 @@ body.rtl #wpforms-entries-list .wp-list-table div[data-field-type="phone"] {
 }
 
 #wpforms-admin-addons .addon-item .actions .msg.error {
+<<<<<<< HEAD
+<<<<<<< HEAD
+  color: red;
+=======
   color: #ccc;
+>>>>>>> main
+=======
+  color: #ccc;
+>>>>>>> main
 }
 
 #wpforms-admin-addons .addon-item .status {
@@ -3962,7 +4002,15 @@ body.rtl #wpforms-entries-list .wp-list-table div[data-field-type="phone"] {
 }
 
 #wpforms-admin-addons .addon-item .status .status-inactive {
+<<<<<<< HEAD
+<<<<<<< HEAD
+  color: red;
+=======
   color: #ccc;
+>>>>>>> main
+=======
+  color: #ccc;
+>>>>>>> main
 }
 
 #wpforms-admin-addons .addon-item .status .status-active {
@@ -3995,7 +4043,15 @@ body.rtl #wpforms-entries-list .wp-list-table div[data-field-type="phone"] {
 }
 
 .addon-item .status .status-inactive {
+<<<<<<< HEAD
+<<<<<<< HEAD
+  color: red;
+=======
   color: #ccc;
+>>>>>>> main
+=======
+  color: #ccc;
+>>>>>>> main
 }
 
 .addon-item .status .status-active {
@@ -4030,7 +4086,15 @@ body.rtl #wpforms-entries-list .wp-list-table div[data-field-type="phone"] {
 }
 
 .addon-item .action-button button.status-inactive .fa {
+<<<<<<< HEAD
+<<<<<<< HEAD
+  color: red;
+=======
   color: #ccc;
+>>>>>>> main
+=======
+  color: #ccc;
+>>>>>>> main
 }
 
 .addon-item .action-button button.status-download .fa {
@@ -4180,7 +4244,15 @@ body.rtl #wpforms-entries-list .wp-list-table div[data-field-type="phone"] {
   padding: 0 !important;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+#wpforms-admin-about .wpforms-admin-about-section .centered {
+=======
 #wpforms-admin-about .wpforms-admin-about-section .cente#ccc {
+>>>>>>> main
+=======
+#wpforms-admin-about .wpforms-admin-about-section .cente#ccc {
+>>>>>>> main
   text-align: center !important;
 }
 

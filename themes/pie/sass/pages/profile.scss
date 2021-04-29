@@ -13,7 +13,7 @@
 
   #profile-top-counts {
     width: 60%;
-    margin: auto;
+    margin: 35px auto 0 auto;
     display: flex;
     justify-content: space-between;
     font-size: 1.05em;
@@ -90,16 +90,18 @@
     margin-bottom: 80px;
 
     // INFORMATIONS
-    > h3 {
+    h3 {
       opacity: 0.4;
       margin-bottom: 20px;
     }
 
-    > h4 {
+    h4 {
       text-decoration: underline;
+      margin-bottom: 20px;
     }
 
-    > p {
+    p {
+      margin-top: -15px;
       font-weight: bold;
 
       span {
@@ -125,6 +127,23 @@
       color: white;
     }
 
+    #logout-btn {
+      text-decoration: none;
+      border: 1px solid;
+      border-color: #ccc #ccc #bbb;
+      border-radius: 3px;
+      background: #e6e6e6;
+      color: rgba(0, 0, 0, 0.8);
+      line-height: 1;
+      padding: 0.65em 1em 0.5em;
+    }
+
+    #logout-btn:hover {
+      cursor: pointer;
+      background-color: var(--green);
+      color: white;
+    }
+
     // EVENTS
     .event-block {
       width: 90%;
@@ -141,6 +160,7 @@
 
       .event-infos-title {
         font-size: 1.2em;
+        margin-top: 20px;
       }
 
       .event-infos-date {

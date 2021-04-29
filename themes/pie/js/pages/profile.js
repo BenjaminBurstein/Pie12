@@ -40,7 +40,10 @@ let open_btn = $('#profile-editor-open')
 
 function togglePopup(value) {
     if(value) {
+<<<<<<< HEAD
+=======
         jQuery('html, body').animate({scrollTop: 0}, 0);
+>>>>>>> main
         overlay.show();
         editor.show();
     }else {

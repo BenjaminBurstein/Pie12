@@ -123,7 +123,15 @@ Admin Form Builder - Fields panel
 }*/
 
 #wpforms-panel-fields .wpforms-tabs #field-options .active {
+<<<<<<< HEAD
+<<<<<<< HEAD
+	background: #ebf3fb;
+=======
 	background: red;
+>>>>>>> main
+=======
+	background: red;
+>>>>>>> main
 }
 
 /* Tab content
