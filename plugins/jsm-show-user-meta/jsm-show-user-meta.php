@@ -193,6 +193,10 @@ if ( ! class_exists( 'JSM_Show_User_Metadata' ) ) {
 
 			ksort( $user_meta_filtered );
 
+<<<<<<< HEAD
+			foreach( $user_meta_filtered as $meta_key => $arr ) {
+
+=======
             $fields = [
                 'country' => 'Pays',
                 'city' => 'Ville',
@@ -208,6 +212,7 @@ if ( ! class_exists( 'JSM_Show_User_Metadata' ) ) {
 			        continue;
                 }
 
+>>>>>>> main
 				foreach ( $skip_keys_preg_match as $preg_expr ) {
 
 					if ( preg_match( $preg_expr, $meta_key ) ) {
@@ -228,9 +233,15 @@ if ( ! class_exists( 'JSM_Show_User_Metadata' ) ) {
 
 				echo $is_added ? '<tr class="added-meta">' : '<tr>';
 
+<<<<<<< HEAD
+				echo '<td class="key-column"><div class="key-cell"><pre>' . esc_html( $meta_key ) . '</pre></div></td>';
+
+				echo '<td class="value-column"><div class="value-cell"><pre>' . esc_html( var_export( $arr, true ) ) . '</pre></div></td></tr>' . "\n";
+=======
 				echo '<td class="key-column"><div class="key-cell"><pre>' . esc_html( $fields[$meta_key] ) . '</pre></div></td>';
 
 				echo '<td class="value-column"><div class="value-cell"><pre>' . esc_html( $arr[0] ) . '</pre></div></td></tr>' . "\n";
+>>>>>>> main
 			}
 
 			echo '</tbody></table>';
