@@ -51,7 +51,7 @@ get_header();
 								<p class="desc_poste"><?= substr(get_field("desc"), 0, 300).'...'; ?></p>
 								</div>
 								
-								<a class="Lire" href="/<?= $post->post_name?>" ><p>Lire la suite</p></a>
+								<p class="lasuite">	<a class="Lire"  href="/<?= $post->post_name?>" >Lire la suite</a></p>
 							</div>	
 					
 							
@@ -62,5 +62,4 @@ get_header();
 			</div>
 	</main>
 <?php
-
 get_footer();
