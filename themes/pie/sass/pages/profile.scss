@@ -3,7 +3,7 @@
   width: 90%;
   background-color: var(--green);
   color: white;
-  padding: 20px 0 70px 0;
+  padding: 20px 0 90px 0;
   margin: 70px auto 250px auto;
   position: relative;
 
@@ -13,7 +13,7 @@
 
   #profile-top-counts {
     width: 60%;
-    margin: 35px auto 0 auto;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     font-size: 1.05em;
@@ -34,11 +34,11 @@
 
   img {
     position: absolute;
-    width: 12%;
+    width: 10%;
     object-fit: contain;
     border-radius: 50%;
-    left: calc(50% - (12%/2));
-    top: 140px;
+    left: calc(50% - (10%/2));
+    top: 150px;
     box-shadow: 0 0 10px var(--grey);
   }
 }
@@ -86,21 +86,19 @@
   .profile-content-menu {
     margin-top: 10px;
     border: solid var(--grey) 1px;
-    padding: 10px 20px 20px 20px;
+    padding: 0 20px 20px 20px;
     margin-bottom: 80px;
 
     // INFORMATIONS
-    h3 {
+    > h3 {
       opacity: 0.4;
     }
 
-    h4 {
+    > h4 {
       text-decoration: underline;
-      margin-bottom: 20px;
     }
 
-    p {
-      margin-top: -15px;
+    > p {
       font-weight: bold;
 
       span {
@@ -108,13 +106,8 @@
       }
     }
 
-    button:hover {
-      cursor: pointer;
-      background-color: var(--green);
-      color: white;
-    }
-
-    #logout-btn {
+    #logout-btn, #admin-btn {
+      color: black;
       text-decoration: none;
       border: 1px solid;
       border-color: #ccc #ccc #bbb;
@@ -122,10 +115,10 @@
       background: #e6e6e6;
       color: rgba(0, 0, 0, 0.8);
       line-height: 1;
-      padding: 0.65em 1em 0.5em;
+      padding: 0.4em 1em 0.31em;
     }
 
-    #logout-btn:hover {
+    button:hover, #logout-btn:hover, #admin-btn:hover {
       cursor: pointer;
       background-color: var(--green);
       color: white;
@@ -134,7 +127,7 @@
     // EVENTS
     .event-block {
       width: 90%;
-      margin: 0 auto 40px auto;
+      margin: 40px auto 30px auto;
 
       display: flex;
       position: relative;
@@ -147,10 +140,10 @@
 
       .event-infos-title {
         font-size: 1.2em;
-        margin-top: 20px;
       }
 
       .event-infos-date {
+        margin-bottom: 0;
         opacity: 0.7;
       }
 
@@ -176,7 +169,7 @@
 }
 
 #profile-editor {
-  position: fixed;
+  position: absolute;
   border: solid var(--grey) 1px;
   padding: 0 20px 20px 20px;
   background-color: white;
