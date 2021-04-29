@@ -1201,6 +1201,7 @@ textarea {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #overlay {
   position: fixed;
   width: 100%;
@@ -1331,6 +1332,8 @@ textarea {
 }
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> 631f79dca4973f1910b3b08f4c6d9fb2d6eef535
 #bloc {
   width: 80%;
   margin: 3rem 0 3rem 0;
@@ -1348,6 +1351,9 @@ a {
   text-decoration: none !important;
 }
 
+<<<<<<< HEAD
+>>>>>>> 631f79dca4973f1910b3b08f4c6d9fb2d6eef535
+=======
 >>>>>>> 631f79dca4973f1910b3b08f4c6d9fb2d6eef535
 #img_firstposts {
   width: 100%;
@@ -1521,6 +1527,7 @@ a {
   .description_post {
     width: 90%;
   }
+<<<<<<< HEAD
 }
 @media screen and (max-width: 769px) {
   .desc_post {
@@ -1560,6 +1567,47 @@ a {
     height: 150px;
   }
 
+=======
+}
+@media screen and (max-width: 769px) {
+  .desc_post {
+    width: 90%;
+    padding-left: 30px;
+  }
+
+  .titre_post {
+    font-size: 22px;
+  }
+
+  .description_post {
+    font-size: 16px;
+    width: 95%;
+  }
+
+  .tagname_posts {
+    font-size: 16px;
+    color: black;
+    margin: 0;
+  }
+
+  .tagcont_posts {
+    display: flex;
+    padding: 2px 5px 2px 5px;
+    border: 1px solid grey;
+    margin-right: 15px;
+  }
+
+  .img_post {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 648px) {
+  .img_listPosts {
+    width: 80%;
+    height: 150px;
+  }
+
+>>>>>>> 631f79dca4973f1910b3b08f4c6d9fb2d6eef535
   .desc_post {
     padding-left: 10px;
   }
