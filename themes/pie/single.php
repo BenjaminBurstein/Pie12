@@ -50,11 +50,8 @@ get_header();
 								<div class="poste_desc">
 								<p class="desc_poste"><?= substr(get_field("desc"), 0, 300).'...'; ?></p>
 								</div>
-								
 								<p class="lasuite">	<a class="Lire"  href="/<?= $post->post_name?>" >Lire la suite</a></p>
-							</div>	
-					
-							
+							</div>		
 						<?php 
 					endforeach;?>
 						</div>	

@@ -12,7 +12,15 @@ if(isset($_POST['login_submit'])) {
     }else {
         setcookie('user_identify', '', time()-3600, "/", $_SERVER['SERVER_NAME']);
     }
+<<<<<<< HEAD
     $user = wp_signon($_POST);
+=======
+    $msg = ['success' => false, 'msg' => 'yes'];
+    $user = wp_signon([
+        'user_login' => $_POST['user_login'],
+        'user_password' => $_POST['user_password']
+    ]);
+>>>>>>> main
     if(is_wp_error($user)) {
         $msg = ['success' => false, 'msg' => $user->get_error_message()];
     }else {
@@ -51,9 +59,23 @@ if(isset($_POST['login_submit'])) {
                 }
                 add_user_meta($user, $key, $value);
             }
+<<<<<<< HEAD
             $msg = 'Vous êtes maintenant inscrit';
             $headers = 'From : ' . get_option('admin_email') . "\r\n";
             wp_mail($p['user_email'], 'Inscription réussie', $msg, $headers);
+=======
+
+            //MAIL TO USER
+            $msg = 'Vous êtes maintenant inscrit';
+            $headers = 'From : ' . get_option('admin_email') . "\r\n";
+            wp_mail($p['user_email'], 'Inscription réussie', $msg, $headers);
+
+            //MAIL TO ADMIN
+            $msg = 'L\'utilisateur '.$p['user_login'].' est en attente d\'inscription sur votre panel admin.';
+            $headers = 'From : ' . get_option('admin_email') . "\r\n";
+            wp_mail(get_option('admin_email'), 'Inscription d\'utilisateur', $msg, $headers);
+
+>>>>>>> main
             wp_signon($p);
             $p = [];
             wp_redirect('/profile');
