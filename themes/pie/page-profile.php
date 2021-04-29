@@ -162,7 +162,10 @@ get_header();
                 <p>Identifiant: <span><?= $user->user_login ?></span></p>
                 <p>Mot de passe: <span>********</span></p>
                 <button id="profile-editor-open">Modifier</button>
-                <a id="logout-btn" href="<?php echo wp_logout_url(get_permalink()) ?>">Déconnexion</a>
+                <?php if(in_array('administrator', $user->roles)) : ?>
+                    <a id="admin-btn" href="<?= admin_url() ?>">Panel Admin</a>
+                <?php endif; ?>
+                <a id="logout-btn" href="<?= wp_logout_url(get_permalink()) ?>">Déconnexion</a>
             </div>
 
             <div data-active="false" data-type="events" class="profile-content-menu">

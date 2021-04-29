@@ -994,6 +994,7 @@ textarea {
   background-color: white;
   position: relative;
   z-index: 999;
+  padding-bottom: 10px;
 }
 #site-header a {
   text-decoration: none;
@@ -1046,7 +1047,7 @@ textarea {
   width: 90%;
   background-color: var(--green);
   color: white;
-  padding: 20px 0 70px 0;
+  padding: 20px 0 90px 0;
   margin: 70px auto 250px auto;
   position: relative;
 }
@@ -1055,7 +1056,7 @@ textarea {
 }
 #profile-top #profile-top-counts {
   width: 60%;
-  margin: 35px auto 0 auto;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   font-size: 1.05em;
@@ -1072,11 +1073,11 @@ textarea {
 }
 #profile-top img {
   position: absolute;
-  width: 12%;
+  width: 10%;
   object-fit: contain;
   border-radius: 50%;
-  left: calc(50% - (12%/2));
-  top: 140px;
+  left: calc(50% - (10%/2));
+  top: 150px;
   box-shadow: 0 0 10px var(--grey);
 }
 
@@ -1115,29 +1116,23 @@ textarea {
 #profile-content .profile-content-menu {
   margin-top: 10px;
   border: solid var(--grey) 1px;
-  padding: 10px 20px 20px 20px;
+  padding: 0 20px 20px 20px;
   margin-bottom: 80px;
 }
-#profile-content .profile-content-menu h3 {
+#profile-content .profile-content-menu > h3 {
   opacity: 0.4;
 }
-#profile-content .profile-content-menu h4 {
+#profile-content .profile-content-menu > h4 {
   text-decoration: underline;
-  margin-bottom: 20px;
 }
-#profile-content .profile-content-menu p {
-  margin-top: -15px;
+#profile-content .profile-content-menu > p {
   font-weight: bold;
 }
-#profile-content .profile-content-menu p span {
+#profile-content .profile-content-menu > p span {
   color: var(--green);
 }
-#profile-content .profile-content-menu button:hover {
-  cursor: pointer;
-  background-color: var(--green);
-  color: white;
-}
-#profile-content .profile-content-menu #logout-btn {
+#profile-content .profile-content-menu #logout-btn, #profile-content .profile-content-menu #admin-btn {
+  color: black;
   text-decoration: none;
   border: 1px solid;
   border-color: #ccc #ccc #bbb;
@@ -1145,16 +1140,16 @@ textarea {
   background: #e6e6e6;
   color: rgba(0, 0, 0, 0.8);
   line-height: 1;
-  padding: 0.65em 1em 0.5em;
+  padding: 0.4em 1em 0.31em;
 }
-#profile-content .profile-content-menu #logout-btn:hover {
+#profile-content .profile-content-menu button:hover, #profile-content .profile-content-menu #logout-btn:hover, #profile-content .profile-content-menu #admin-btn:hover {
   cursor: pointer;
   background-color: var(--green);
   color: white;
 }
 #profile-content .profile-content-menu .event-block {
   width: 90%;
-  margin: 0 auto 40px auto;
+  margin: 40px auto 30px auto;
   display: flex;
   position: relative;
 }
@@ -1165,9 +1160,9 @@ textarea {
 }
 #profile-content .profile-content-menu .event-block .event-infos-title {
   font-size: 1.2em;
-  margin-top: 20px;
 }
 #profile-content .profile-content-menu .event-block .event-infos-date {
+  margin-bottom: 0;
   opacity: 0.7;
 }
 #profile-content .profile-content-menu .event-block button {
@@ -1187,7 +1182,7 @@ textarea {
 }
 
 #profile-editor {
-  position: fixed;
+  position: absolute;
   border: solid var(--grey) 1px;
   padding: 0 20px 20px 20px;
   background-color: white;
@@ -1283,6 +1278,89 @@ textarea {
   #profile-editor {
     width: 95%;
     left: calc((100% - 95%) / 2);
+  }
+}
+.img_posts:first-child {
+  width: 300px;
+  height: 300px;
+}
+
+.img_posts {
+  width: 150px;
+  height: 150px;
+}
+
+div.wpforms-container-full .wpforms-form input[type=date], div.wpforms-container-full .wpforms-form input[type=datetime], div.wpforms-container-full .wpforms-form input[type=datetime-local], div.wpforms-container-full .wpforms-form input[type=email], div.wpforms-container-full .wpforms-form input[type=month], div.wpforms-container-full .wpforms-form input[type=number], div.wpforms-container-full .wpforms-form input[type=password], div.wpforms-container-full .wpforms-form input[type=tel], div.wpforms-container-full .wpforms-form input[type=text], div.wpforms-container-full .wpforms-form input[type=time], div.wpforms-container-full .wpforms-form input[type=url], div.wpforms-container-full .wpforms-form input[type=week], div.wpforms-container-full .wpforms-form select {
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #333;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  display: flex;
+  float: none;
+  font-size: 16px;
+  border: 0px;
+  border-bottom: 1px solid #9c9c9c;
+  padding: 6px 10px;
+  height: 38px;
+  width: 100%;
+  line-height: 1.3;
+}
+
+div.wpforms-container-full .wpforms-form input[type=submit], div.wpforms-container-full .wpforms-form button[type=submit], div.wpforms-container-full .wpforms-form .wpforms-page-button {
+  background: #5fbe58;
+  width: 40%;
+  font-size: 1.2em;
+  margin: auto;
+  color: white;
+  font-family: "Nunito";
+  font-weight: 800;
+}
+
+div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-container-full .wpforms-form button[type=submit]:hover, div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
+  background: linear-gradient(var(--green), var(--dark_green));
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-submit-container {
+  display: flex;
+}
+
+@media screen and (max-width: 414px) {
+  div.wpforms-container-full .wpforms-form input[type=date], div.wpforms-container-full .wpforms-form input[type=datetime], div.wpforms-container-full .wpforms-form input[type=datetime-local], div.wpforms-container-full .wpforms-form input[type=email], div.wpforms-container-full .wpforms-form input[type=month], div.wpforms-container-full .wpforms-form input[type=number], div.wpforms-container-full .wpforms-form input[type=password], div.wpforms-container-full .wpforms-form input[type=tel], div.wpforms-container-full .wpforms-form input[type=text], div.wpforms-container-full .wpforms-form input[type=time], div.wpforms-container-full .wpforms-form input[type=url], div.wpforms-container-full .wpforms-form input[type=week], div.wpforms-container-full .wpforms-form select {
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 2px;
+    color: #333;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    display: flex;
+    float: none;
+    font-size: 16px;
+    border: 1px solid #9c9c9c;
+    padding: 6px 10px;
+    height: 38px;
+    width: 100%;
+    line-height: 1.3;
+  }
+
+  div.wpforms-container-full .wpforms-form input[type=submit], div.wpforms-container-full .wpforms-form button[type=submit], div.wpforms-container-full .wpforms-form .wpforms-page-button {
+    background: #5fbe58;
+    width: 40%;
+    font-size: 1.2em;
+    margin: auto;
+    color: white;
+    font-family: "Nunito";
+    font-weight: 800;
+    border-radius: 15px;
+  }
+
+  div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-container-full .wpforms-form button[type=submit]:hover, div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
+    background: #a2fd9c;
+  }
+
+  div.wpforms-container-full .wpforms-form .wpforms-submit-container {
+    display: flex;
   }
 }
 .auth-main #auth-img {
@@ -1414,33 +1492,6 @@ textarea {
   cursor: pointer;
 }
 
-/* RESPONSIVE */
-/* IPAD */
-@media screen and (max-width: 768px) {
-  .auth-main #auth-img {
-    width: 20%;
-  }
-  .auth-main .auth-block {
-    width: 80%;
-  }
-}
-/* MOBILE */
-@media screen and (max-width: 414px) {
-  .auth-main {
-    display: block;
-  }
-  .auth-main #auth-img {
-    display: none;
-  }
-  .auth-main .auth-block {
-    width: 100%;
-    float: unset;
-    margin: auto;
-  }
-}
-.img_posts:first-child {
-  width: 300px;
-  height: 300px;
 /* RESPONSIVE */
 /* IPAD */
 @media screen and (max-width: 768px) {

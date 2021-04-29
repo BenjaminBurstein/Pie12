@@ -42,6 +42,7 @@ function togglePopup(value) {
     if(value) {
         overlay.show();
         editor.show();
+        jQuery('html, body').animate({scrollTop: 0}, 400);
     }else {
         overlay.hide();
         editor.hide();

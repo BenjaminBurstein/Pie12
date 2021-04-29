@@ -109,11 +109,11 @@ class WP_Import extends WP_Importer {
 			die();
 		}
 
-		$import_data = $this->parse($file);
+		$import_data = $this->parse( $file );
 
 		if ( is_wp_error( $import_data ) ) {
 			echo '<p><strong>' . __( 'Sorry, there has been an error.', 'wordpress-importer' ) . '</strong><br />';
-			echo esc_html($import_data->get_error_message() ) . '</p>';
+			echo esc_html( $import_data->get_error_message() ) . '</p>';
 			$this->footer();
 			die();
 		}
