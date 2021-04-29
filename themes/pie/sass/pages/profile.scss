@@ -3,7 +3,7 @@
   width: 90%;
   background-color: var(--green);
   color: white;
-  padding: 20px 0 40px 0;
+  padding: 20px 0 70px 0;
   margin: 70px auto 250px auto;
   position: relative;
 
@@ -13,7 +13,7 @@
 
   #profile-top-counts {
     width: 60%;
-    margin: auto;
+    margin: 35px auto 0 auto;
     display: flex;
     justify-content: space-between;
     font-size: 1.05em;
@@ -32,7 +32,7 @@
 
   }
 
-  #profile-top-img {
+  img {
     position: absolute;
     width: 12%;
     object-fit: contain;
@@ -47,6 +47,22 @@
 #profile-content {
   width: 70%;
   margin: auto;
+
+  .msg-block {
+    width: 100%;
+    margin: 0 auto 50px auto;
+    background-color: var(--red);
+    padding: 15px;
+    color: white;
+  }
+
+  #error-block {
+    background-color: var(--red);
+  }
+
+  #success-block {
+    background-color: var(--green);
+  }
 
   #profile-content-nav {
     display: flex;
@@ -70,19 +86,21 @@
   .profile-content-menu {
     margin-top: 10px;
     border: solid var(--grey) 1px;
-    padding: 0 20px 20px 20px;
+    padding: 10px 20px 20px 20px;
     margin-bottom: 80px;
 
     // INFORMATIONS
-    > h3 {
+    h3 {
       opacity: 0.4;
     }
 
-    > h4 {
+    h4 {
       text-decoration: underline;
+      margin-bottom: 20px;
     }
 
-    > p {
+    p {
+      margin-top: -15px;
       font-weight: bold;
 
       span {
@@ -91,6 +109,23 @@
     }
 
     button:hover {
+      cursor: pointer;
+      background-color: var(--green);
+      color: white;
+    }
+
+    #logout-btn {
+      text-decoration: none;
+      border: 1px solid;
+      border-color: #ccc #ccc #bbb;
+      border-radius: 3px;
+      background: #e6e6e6;
+      color: rgba(0, 0, 0, 0.8);
+      line-height: 1;
+      padding: 0.65em 1em 0.5em;
+    }
+
+    #logout-btn:hover {
       cursor: pointer;
       background-color: var(--green);
       color: white;
@@ -112,10 +147,10 @@
 
       .event-infos-title {
         font-size: 1.2em;
+        margin-top: 20px;
       }
 
       .event-infos-date {
-        margin: -10px 0;
         opacity: 0.7;
       }
 
@@ -127,4 +162,145 @@
 
     }
   }
+}
+
+//POPUP
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+#profile-editor {
+  position: fixed;
+  border: solid var(--grey) 1px;
+  padding: 0 20px 20px 20px;
+  background-color: white;
+  z-index: 2;
+  width: 60%;
+  left: calc((100% - 60%) / 2);
+
+  #profile-editor-close {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    color: var(--green);
+    font-size: 2.8em;
+  }
+
+  #profile-editor-close:hover {
+    cursor: pointer;
+  }
+
+  // INFORMATIONS
+  h3 {
+    opacity: 0.4;
+  }
+
+  h4 {
+    text-decoration: underline;
+  }
+
+  p {
+    font-weight: bold;
+
+    input {
+      color: var(--green);
+      outline: none;
+    }
+
+    input::placeholder {
+      color: var(--grey);
+      opacity: 0.4;
+    }
+  }
+
+  button:hover {
+    cursor: pointer;
+    background-color: var(--green);
+    color: white;
+  }
+}
+
+/* RESPONSIVE */
+
+/* IPAD ROTATE */
+
+@media screen and (max-width: 1024px) {
+
+  #profile-top {
+    padding-bottom: 10px;
+
+    img {
+      width: 15%;
+      left: calc(50% - (15%/2));
+    }
+  }
+
+  #profile-editor {
+    width: 80%;
+    left: calc((100% - 80%) / 2);
+  }
+
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 414px) {
+
+  #profile-top {
+    width: 100%;
+    margin-bottom: 120px;
+    padding-bottom: 80px;
+
+    #profile-top-counts {
+      width: 50%;
+      display: block;
+      justify-content: space-between;
+      font-size: 1.05em;
+
+      .profile-top-count-value {
+
+        .profile-top-count-value {
+          width: 70%;
+          text-align: center;
+        }
+      }
+
+    }
+
+    img {
+      width: 40%;
+      left: calc(50% - (40%/2));
+      top: 75%;
+    }
+  }
+
+  #profile-content {
+    width: 95%;
+
+    .profile-content-menu {
+      .event-block {
+        width: 95%;
+        display: block;
+
+        .profile-top-img {
+          width: 50%;
+          display: block;
+          margin: auto;
+        }
+      }
+
+    }
+  }
+
+  #profile-editor {
+    width: 95%;
+    left: calc((100% - 95%) / 2);
+  }
+
 }
