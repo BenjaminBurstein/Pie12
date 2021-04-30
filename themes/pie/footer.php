@@ -22,8 +22,8 @@
                 <hr>
             </div>
 
-            <p>Qui sommes-nous?</p>
-            <p>Nous contacter</p>
+          
+            <a class="jesaispas" href="/contact/"><p>Nous contacter</p></a>
 
         </div>
 
@@ -35,16 +35,13 @@
 
         <div>
 
-            <div class="footer-title">
-                <h2>Social</h2>
+            <div id="cache" class="footer-title">
+                <h2>Mentions légales</h2>
                 <hr>
             </div>
 
-            <div class="footer-socials">
-                <i class="fab fa-twitter-square"></i>
-                <i class="fab fa-facebook-square"></i>
-                <i class="fab fa-instagram-square"></i>
-                <i class="fab fa-youtube-square"></i>
+            <div class="footer-title">
+            <a class="jesaispas" href="/Terms-conditions/"><p>Mentions légales</p></a>
             </div>
 
         </div>
