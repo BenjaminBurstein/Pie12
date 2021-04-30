@@ -7705,7 +7705,7 @@ exports.default = HookBreak;
 
 /***/ "../core/common/assets/js/views/modal/header.js":
 /*!******************************************************!*\
-  !*** ../core/common/assets/js/views/modal/header.js ***!
+  !*** ../core/common/assets/js/views/modal/burger.js ***!
   \******************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: __webpack_exports__, __webpack_require__ */

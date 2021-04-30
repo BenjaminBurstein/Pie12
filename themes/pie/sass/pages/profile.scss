@@ -3,7 +3,7 @@
   width: 90%;
   background-color: var(--green);
   color: white;
-  padding: 20px 0 70px 0;
+  padding: 20px 0 90px 0;
   margin: 70px auto 250px auto;
   position: relative;
 
@@ -34,11 +34,11 @@
 
   img {
     position: absolute;
-    width: 12%;
+    width: 10%;
     object-fit: contain;
     border-radius: 50%;
-    left: calc(50% - (12%/2));
-    top: 140px;
+    left: calc(50% - (10%/2));
+    top: 150px;
     box-shadow: 0 0 10px var(--grey);
   }
 }
@@ -92,6 +92,7 @@
     // INFORMATIONS
     h3 {
       opacity: 0.4;
+      margin-bottom: 20px;
     }
 
     h4 {
@@ -108,7 +109,19 @@
       }
     }
 
-    button:hover {
+    #logout-btn, #admin-btn {
+      color: black;
+      text-decoration: none;
+      border: 1px solid;
+      border-color: #ccc #ccc #bbb;
+      border-radius: 2px;
+      background: #e6e6e6;
+      color: rgba(0, 0, 0, 0.8);
+      line-height: 1;
+      padding: 0.65em 1em 0.5em;
+    }
+
+    button:hover, #logout-btn:hover, #admin-btn:hover {
       cursor: pointer;
       background-color: var(--green);
       color: white;
@@ -134,7 +147,7 @@
     // EVENTS
     .event-block {
       width: 90%;
-      margin: 0 auto 40px auto;
+      margin: 40px auto 30px auto;
 
       display: flex;
       position: relative;
@@ -151,6 +164,7 @@
       }
 
       .event-infos-date {
+        margin-bottom: 0;
         opacity: 0.7;
       }
 
@@ -176,20 +190,21 @@
 }
 
 #profile-editor {
-  position: fixed;
+  position: absolute;
   border: solid var(--grey) 1px;
   padding: 0 20px 20px 20px;
   background-color: white;
   z-index: 2;
   width: 60%;
   left: calc((100% - 60%) / 2);
+  top: 20%;
 
   #profile-editor-close {
     position: absolute;
-    right: 10px;
+    right: 12px;
     top: 8px;
     color: var(--green);
-    font-size: 2.8em;
+    font-size: 2.5em;
   }
 
   #profile-editor-close:hover {
@@ -209,6 +224,7 @@
     font-weight: bold;
 
     input {
+      margin-left: 5px;
       color: var(--green);
       outline: none;
     }

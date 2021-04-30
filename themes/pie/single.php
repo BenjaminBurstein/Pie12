@@ -11,30 +11,52 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
-		<?php
-		while ( have_posts() ) :
-			the_post();
-
-			get_template_part( 'template-parts/content', get_post_type() );
-
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'pie' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'pie' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
-
+	<?php 
+		if(have_posts() ) :
+			while (have_posts() ) :
+				the_post();
+				$primaryTitle = get_the_title();
+				?>
+					<div>
+						<div>
+							<h2 class="title_poste"><?= the_title() ?></h2>
+							<div class="div_img_poste">
+							<img class="img_poste"  src="<?= get_field("img") ?>" alt="">
+							</div>
+							<div class="test">
+							<div class="div_desc_poste">
+							<p class="description_poste"><?= get_field("desc") ?></p>
+							</div>
+							</div>
+							
+							
+						</div>
+					<div>
+			<?php endwhile; 
+			endif;?>
+				<hr>
+				<h2 class="title_poste">Autre article</h2>
+					<?php  
+					setlocale (LC_TIME, 'fr_FR.utf8','fra');
+					$the_query = new WP_Query(array( 'orderby' => 'rand', 'posts_per_page' => '3', "post__not_in"=> array(get_the_ID())));
+					?>  	<div class="containerposte"><?php  
+					foreach($the_query->get_posts() as $post) : 
+						?>  
+					
+						<div class="cardposte">
+								<p  class="date_poste"><?= strftime("%d %B %G", strtotime($post->post_date)); ?></p>
+								<img class="photo_poste" src="<?= get_field("img") ?>" alt="">
+								<h3 class="titre_poste"><?= the_title() ?></h3>
+								<div class="poste_desc">
+								<p class="desc_poste"><?= substr(get_field("desc"), 0, 300).'...'; ?></p>
+								</div>
+								<p class="lasuite">	<a class="Lire"  href="/<?= $post->post_name?>" >Lire la suite</a></p>
+							</div>		
+						<?php 
+					endforeach;?>
+						</div>	
+				</div>
+			</div>
+	</main>
 <?php
-get_sidebar();
 get_footer();

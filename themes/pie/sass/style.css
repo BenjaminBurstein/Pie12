@@ -994,6 +994,10 @@ textarea {
   background-color: white;
   position: relative;
   z-index: 999;
+<<<<<<< HEAD
+=======
+  padding-bottom: 10px;
+>>>>>>> main
 }
 #site-header a {
   text-decoration: none;
@@ -1046,7 +1050,11 @@ textarea {
   width: 90%;
   background-color: var(--green);
   color: white;
+<<<<<<< HEAD
   padding: 20px 0 70px 0;
+=======
+  padding: 20px 0 90px 0;
+>>>>>>> main
   margin: 70px auto 250px auto;
   position: relative;
 }
@@ -1072,11 +1080,11 @@ textarea {
 }
 #profile-top img {
   position: absolute;
-  width: 12%;
+  width: 10%;
   object-fit: contain;
   border-radius: 50%;
-  left: calc(50% - (12%/2));
-  top: 140px;
+  left: calc(50% - (10%/2));
+  top: 150px;
   box-shadow: 0 0 10px var(--grey);
 }
 
@@ -1120,6 +1128,7 @@ textarea {
 }
 #profile-content .profile-content-menu h3 {
   opacity: 0.4;
+  margin-bottom: 20px;
 }
 #profile-content .profile-content-menu h4 {
   text-decoration: underline;
@@ -1132,7 +1141,18 @@ textarea {
 #profile-content .profile-content-menu p span {
   color: var(--green);
 }
-#profile-content .profile-content-menu button:hover {
+#profile-content .profile-content-menu #logout-btn, #profile-content .profile-content-menu #admin-btn {
+  color: black;
+  text-decoration: none;
+  border: 1px solid;
+  border-color: #ccc #ccc #bbb;
+  border-radius: 2px;
+  background: #e6e6e6;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1;
+  padding: 0.65em 1em 0.5em;
+}
+#profile-content .profile-content-menu button:hover, #profile-content .profile-content-menu #logout-btn:hover, #profile-content .profile-content-menu #admin-btn:hover {
   cursor: pointer;
   background-color: var(--green);
   color: white;
@@ -1154,7 +1174,7 @@ textarea {
 }
 #profile-content .profile-content-menu .event-block {
   width: 90%;
-  margin: 0 auto 40px auto;
+  margin: 40px auto 30px auto;
   display: flex;
   position: relative;
 }
@@ -1168,6 +1188,10 @@ textarea {
   margin-top: 20px;
 }
 #profile-content .profile-content-menu .event-block .event-infos-date {
+<<<<<<< HEAD
+=======
+  margin-bottom: 0;
+>>>>>>> main
   opacity: 0.7;
 }
 #profile-content .profile-content-menu .event-block button {
@@ -1187,13 +1211,18 @@ textarea {
 }
 
 #profile-editor {
+<<<<<<< HEAD
   position: fixed;
+=======
+  position: absolute;
+>>>>>>> main
   border: solid var(--grey) 1px;
   padding: 0 20px 20px 20px;
   background-color: white;
   z-index: 2;
   width: 60%;
   left: calc((100% - 60%) / 2);
+<<<<<<< HEAD
 }
 #profile-editor #profile-editor-close {
   position: absolute;
@@ -1201,6 +1230,16 @@ textarea {
   top: 8px;
   color: var(--green);
   font-size: 2.8em;
+=======
+  top: 20%;
+}
+#profile-editor #profile-editor-close {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  color: var(--green);
+  font-size: 2.5em;
+>>>>>>> main
 }
 #profile-editor #profile-editor-close:hover {
   cursor: pointer;
@@ -1215,6 +1254,10 @@ textarea {
   font-weight: bold;
 }
 #profile-editor p input {
+<<<<<<< HEAD
+=======
+  margin-left: 5px;
+>>>>>>> main
   color: var(--green);
   outline: none;
 }

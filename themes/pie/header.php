@@ -36,61 +36,45 @@
             </div>
         </div>
 
-        <ul id="header-right">
-
-            <?php
-            $items = wp_get_nav_menu_items(
+        <?php
+        $items = wp_get_nav_menu_items(
                 get_nav_menu_locations("main-menu")['main-menu']
             );
-            foreach ($items as $menuItem) : ?>
+        ?>
+
+        <!-- BURGER MENU -->
+        <button id="hamburger-button">&#9776;</button>
+        <div id="hamburger-sidebar">
+            <div id="hamburger-sidebar-header">
+                <img src="<?= is_user_logged_in()? get_avatar_url(get_currentuserinfo()->user_email) :get_template_directory_uri().'/img/unknown.png' ?>" alt="">
+                <?php if(is_user_logged_in()) : ?>
+                    <a href="/profile"><?= get_currentuserinfo()->user_login ?></a>
+                <?php else: ?>
+                    <a href="/auth">Se connecter</a>
+                <?php endif; ?>
+            </div>
+            <div id="hamburger-sidebar-body">
+                <ul>
+                    <?php foreach ($items as $menuItem) : ?>
+                        <a href="<?= $menuItem->url ?>"><li><?= $menuItem->title ?></li></a>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+        <div id="hamburger-overlay"></div>
+
+        <ul id="header-right">
+
+            <?php foreach ($items as $menuItem) : ?>
                     <li><a href="<?= $menuItem->url ?>"><?= $menuItem->title ?></a></li>
             <?php endforeach; ?>
             <li><a id="login-link" href="
-            <?php
-                if(!is_user_logged_in()) {
-                    echo '/auth';
-                } else {
-                    echo '/profile';
-                }
-            ?>
+            <?= !is_user_logged_in() ? '/auth' : '/profile' ?>
             "><i class="fas fa-user"></i></a></li>
         </ul>
     </header>
 
-	<!--<a class="skip-link screen-reader-text" href="#primary"><?php /*esc_html_e( 'Skip to content', 'pie' ); */?></a>
-
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-/*			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				*/?>
-				<h1 class="site-title"><a href="<?php /*echo esc_url( home_url( '/' ) ); */?>" rel="home"><?php /*bloginfo( 'name' ); */?></a></h1>
-				<?php
-/*			else :
-				*/?>
-				<p class="site-title"><a href="<?php /*echo esc_url( home_url( '/' ) ); */?>" rel="home"><?php /*bloginfo( 'name' ); */?></a></p>
-				<?php
-/*			endif;
-			$pie_description = get_bloginfo( 'description', 'display' );
-			if ( $pie_description || is_customize_preview() ) :
-				*/?>
-				<p class="site-description"><?php /*echo $pie_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */?></p>
-			<?php /*endif; */?>
-		</div>
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php /*esc_html_e( 'Primary Menu', 'pie' ); */?></button>
-			<?php
-/*			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			*/?>
-		</nav>
-	</header>-->
+    <script src="<?php echo get_template_directory_uri(); ?>/js/pages/burger.js"></script>
 
 </div>
 
