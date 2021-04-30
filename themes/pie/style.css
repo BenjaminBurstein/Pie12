@@ -930,6 +930,11 @@ textarea {
 
 /* Pages
 --------------------------------------------- */
+.jesaispas {
+  text-decoration: none !important;
+  color: white !important;
+}
+
 .page {
   margin-bottom: 0;
 }
@@ -993,7 +998,7 @@ textarea {
 
 /* RESPONSIVE */
 /* IPAD ROTATE */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1400px) {
   .site-footer #footer-block {
     width: 100%;
   }
@@ -1028,7 +1033,7 @@ textarea {
   }
 }
 /* MOBILE */
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 700px) {
   .site-footer #footer-block {
     display: block;
   }
@@ -1043,9 +1048,11 @@ textarea {
     margin: 0 auto 50px auto;
     text-align: center;
   }
+  .site-footer #footer-block div #cache {
+    display: none;
+  }
   .site-footer #footer-block div .footer-socials {
-    width: 90%;
-    margin: -25px auto 0 auto;
+    display: none;
   }
   .site-footer .footer-info {
     font-size: 1em;
@@ -1068,12 +1075,12 @@ textarea {
   top: 0;
   overflow: hidden;
   outline: none;
-  background: var(--green) none;
+  background: white none;
   border: none;
   height: 100%;
   width: 20%;
   font-size: 1.5em;
-  color: white;
+  color: var(--middle_green);
 }
 #site-header #hamburger-overlay {
   display: none;
@@ -1093,14 +1100,14 @@ textarea {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: var(--middle_green);
+  background-color: white;
   transform: translate(-100%);
   transition: transform 0.2s ease-out;
 }
 #site-header #hamburger-sidebar-header {
-  background-color: var(--green);
+  background-color: white;
   padding: 20px 0;
-  border-bottom: solid 1px white;
+  border-bottom: solid 1px var(--green);
   text-align: center;
 }
 #site-header #hamburger-sidebar-header img {
@@ -1110,7 +1117,7 @@ textarea {
   margin: auto;
 }
 #site-header #hamburger-sidebar-header a {
-  color: white;
+  color: var(--green);
   font-size: 1.5em;
 }
 #site-header #hamburger-sidebar-body {
@@ -1125,7 +1132,9 @@ textarea {
 #site-header #hamburger-sidebar-body ul li {
   width: 90%;
   margin: 10px auto 0 auto;
-  background-color: white;
+  color: var(--green);
+  padding: 5px 0 5px 5px;
+  font-size: 28px;
 }
 #site-header #hamburger-sidebar-body ul li a {
   display: block;

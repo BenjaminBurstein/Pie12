@@ -1,3 +1,9 @@
+.jesaispas{
+  text-decoration: none !important;
+  color: white !important;
+  
+}
+
 .page {
   margin-bottom: 0;
 }
@@ -90,7 +96,7 @@
 
 /* IPAD ROTATE */
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1400px) {
   .site-footer {
 
     #footer-block {
@@ -149,7 +155,7 @@
 
 /* MOBILE */
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 700px) {
 
   .site-footer {
 
@@ -168,10 +174,11 @@
         width: 90%;
         margin: 0 auto 50px auto;
         text-align: center;
-
+        #cache{
+          display: none;
+        }
         .footer-socials {
-          width: 90%;
-          margin: -25px auto 0 auto;
+         display: none;
         }
       }
 
