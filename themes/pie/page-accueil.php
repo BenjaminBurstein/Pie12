@@ -18,9 +18,11 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-	
-
-	<?= the_content() ?>
+	<?php 
+	$user_login = wp_get_current_user()->user_login;
+	if($user_login){
+		echo the_content();
+	}?>
 			<section id="home_events">
            <h2>Prochain événements</h2>
 		   <div id="nextevents">
