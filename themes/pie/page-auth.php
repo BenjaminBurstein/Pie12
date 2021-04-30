@@ -1,9 +1,9 @@
 <?php
 
 // REDIRECT IF LOGIN
-/*if(is_user_logged_in()) {
+if(is_user_logged_in()) {
     wp_redirect('/profile');
-}*/
+}
 
 $msg = false;
 if(isset($_POST['login_submit'])) {
