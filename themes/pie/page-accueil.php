@@ -58,7 +58,7 @@ get_header();
 					endforeach; $the_query->reset_postdata()?>
                     </div>	
                     <div id="button_en_savoir_plus"><button>En savoir plus  <img src="<?php echo get_template_directory_uri(); ?>/img/fleche_droite.png" alt=""></button></div>
-                    
+                    <a href=""><img src="" alt=""></a>
          </section>
          </div>           
        
@@ -70,4 +70,5 @@ get_header();
 
 <?php
 /*get_sidebar();*/
+get_footer();
 
