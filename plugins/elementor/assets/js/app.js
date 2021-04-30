@@ -5212,7 +5212,7 @@ HeaderButtons.propTypes = {
 
 /***/ "../core/app/assets/js/layout/header.js":
 /*!**********************************************!*\
-  !*** ../core/app/assets/js/layout/header.js ***!
+  !*** ../core/app/assets/js/layout/burger.js ***!
   \**********************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: __webpack_exports__, __webpack_require__ */
