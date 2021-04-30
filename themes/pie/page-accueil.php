@@ -23,16 +23,25 @@ get_header();
 	<?= the_content() ?>
 			<section id="home_events">
            <h2>Prochain événements</h2>
+		   <div id="nextevents">
            <article>
-			<?= do_shortcode("[events layout_type='list' per_page = '3' show_filters = 'false']"); ?>
+			<?= do_shortcode("[events layout_type='box' per_page = '3' show_filters = 'false']"); ?>
 		   </article>
-            <button>Voir les événements <img src="<?php echo get_template_directory_uri(); ?>/img/fleche_droite.png" alt=""></button>
+		   </div>
+		   <div id="button_events"><button>Voir les événements <img src="<?php echo get_template_directory_uri(); ?>/img/fleche_droite.png" alt=""></button></div>
          </section>
+
+		 <hr>
+
 <div id="magie">
          <section id="desc_home">
                     <h2><?= get_field("titre_home")?></h2>
                     <p><?= get_field("desc_home") ?></p>
          </section>
+
+		 <hr>
+
+
 
 
 
@@ -61,6 +70,7 @@ get_header();
                     <div id="button_en_savoir_plus"><button>En savoir plus  <img src="<?php echo get_template_directory_uri(); ?>/img/fleche_droite.png" alt=""></button></div>
                     <a href=""><img src="" alt=""></a>
          </section>
+		 
          </div>           
 
 	</main><!-- #main -->

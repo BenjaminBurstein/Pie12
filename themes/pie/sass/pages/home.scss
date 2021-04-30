@@ -1,4 +1,3 @@
-
 .home_news{
     background-image: url("/wp-content/themes/pie/img/fondnews.png");
     background-size: cover ;
@@ -23,8 +22,50 @@
         }
     }
 
+    h2{
+        padding:30px 0 30px 0;
+        text-align: center;
+        color:green ;
+        font-size: 38px;
+    }
+
    
 }
+
+#home_events{
+
+    h2{
+        padding:30px 0 30px 0;
+        text-align: center;
+        color:green ;
+        font-size: 38px;
+    }
+
+    #button_events{
+        padding-top: 30px;
+        display: flex;
+       align-items: center;
+       justify-content: center;
+        width: 100%;
+        button{
+                     
+            text-align: center;
+         
+            color: green;
+            text-transform: uppercase;
+            img{
+              
+                padding-left: 10px;
+            }
+        }
+    }
+    #nextevents{
+        margin: 10px;
+        overflow-x: hidden;
+    }
+}
+
+
 
 .home_cardposte{
     height: 700px;
