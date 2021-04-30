@@ -1086,6 +1086,7 @@ textarea {
   background: rgba(0, 0, 0, 0.4);
 }
 #site-header #hamburger-sidebar {
+  display: none;
   position: fixed;
   width: 85%;
   z-index: 20;
@@ -1125,6 +1126,10 @@ textarea {
   width: 90%;
   margin: 10px auto 0 auto;
   background-color: white;
+}
+#site-header #hamburger-sidebar-body ul li a {
+  display: block;
+  width: 100%;
   padding: 10px 6%;
 }
 #site-header a {
@@ -1174,7 +1179,7 @@ textarea {
   color: var(--green);
 }
 
-#site-header.hamburger-activated #hamburger-overlay {
+#site-header.hamburger-activated #hamburger-overlay, #site-header.hamburger-activated #hamburger-sidebar {
   display: block;
 }
 #site-header.hamburger-activated #hamburger-sidebar {
@@ -1884,7 +1889,7 @@ a {
     width: 40%;
   }
 }
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 551px) {
   .img_poste {
     width: 100%;
     height: 200px;
@@ -2143,6 +2148,85 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-container {
     width: 100%;
     float: unset;
     margin: auto;
+  }
+}
+.home_news {
+  background-image: url("/wp-content/themes/pie/img/fondnews.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 900px;
+}
+.home_news #button_en_savoir_plus {
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.home_news #button_en_savoir_plus button {
+  text-align: center;
+  color: green;
+  text-transform: uppercase;
+}
+.home_news #button_en_savoir_plus button img {
+  padding-left: 10px;
+}
+
+.home_cardposte {
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 25%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#magie {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#desc_home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#desc_home h2 {
+  padding: 30px 0 30px 0;
+  text-align: center;
+  color: green;
+  font-size: 38px;
+}
+#desc_home p {
+  font-size: 16px;
+  width: 80%;
+  padding-bottom: 30px;
+}
+
+@media screen and (max-width: 1025px) {
+  .home_cardposte {
+    height: 600px;
+  }
+}
+@media screen and (max-width: 769px) {
+  .home_cardposte:last-child {
+    display: none;
+  }
+
+  .home_cardposte {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 551px) {
+  .home_cardposte:nth-child(1) {
+    display: none;
+  }
+
+  .home_cardposte {
+    width: 80%;
+    height: 550px;
   }
 }
 
