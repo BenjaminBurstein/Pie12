@@ -23,8 +23,9 @@ get_header();
 	<?= the_content() ?>
 			<section id="home_events">
            <h2>Prochain événements</h2>
-           <article></article>
-
+           <article>
+			<?= do_shortcode("[events layout_type='list' per_page = '3' show_filters = 'false']"); ?>
+		   </article>
             <button>Voir les événements <img src="<?php echo get_template_directory_uri(); ?>/img/fleche_droite.png" alt=""></button>
          </section>
 <div id="magie">
@@ -55,16 +56,12 @@ get_header();
 								<p class="lasuite">	<a class="Lire"  href="/<?= $post->post_name?>" >Lire la suite</a></p>
 							</article>		
 						<?php 
-					endforeach; $the_query->reset_postdata()?>
+					endforeach; /*$the_query->reset_postdata()*/?>
                     </div>	
                     <div id="button_en_savoir_plus"><button>En savoir plus  <img src="<?php echo get_template_directory_uri(); ?>/img/fleche_droite.png" alt=""></button></div>
                     
          </section>
          </div>           
-       
-
-			
-
 
 	</main><!-- #main -->
 

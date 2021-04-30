@@ -239,7 +239,6 @@ get_header();
        <a href="/<?= $post->post_name?>"> <div class="container_post">
             <div class="img_post">
                 <img class="img_listPosts" src="<?= get_field("img")?>" alt="">
-
             </div>
             <div class="desc_post">
                 <div class="tag_posts">
