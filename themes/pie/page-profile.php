@@ -179,6 +179,7 @@ get_header();
                     if(empty($banner)) {
                         continue;
                     }
+                    var_dump($event);
 
                     ?>
 
