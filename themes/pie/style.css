@@ -2171,6 +2171,38 @@ div.wpforms-container-full .wpforms-form .wpforms-submit-container {
 .home_news #button_en_savoir_plus button img {
   padding-left: 10px;
 }
+.home_news h2 {
+  padding: 30px 0 30px 0;
+  text-align: center;
+  color: green;
+  font-size: 38px;
+}
+
+#home_events h2 {
+  padding: 30px 0 30px 0;
+  text-align: center;
+  color: green;
+  font-size: 38px;
+}
+#home_events #button_events {
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+#home_events #button_events button {
+  text-align: center;
+  color: green;
+  text-transform: uppercase;
+}
+#home_events #button_events button img {
+  padding-left: 10px;
+}
+#home_events #nextevents {
+  margin: 10px;
+  overflow-x: hidden;
+}
 
 .home_cardposte {
   height: 700px;
