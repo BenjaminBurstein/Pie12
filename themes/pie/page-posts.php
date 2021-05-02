@@ -223,7 +223,7 @@ get_header();
  endif;
  ?>
     <div class="news_separator">
-        <h2>Tous les Évènements</h2>
+        <h2>Tous les Articles</h2>
     </div>
     <?php 
      if ( have_posts()) : ?>
